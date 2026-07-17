@@ -46,6 +46,21 @@ and both halves transcoded to web-safe **H.264 / 1080p / 8-bit**:
 
 Previous originals remain in Git history (the commit before the swap) for rollback.
 
+### Verification (`verification/`)
+
+Rendered from the source clip (ffmpeg, ground truth) to show the full experience:
+
+- `sequence_storyboard.png` — 9 labeled frames across the journey: LOADER
+  (Earth → warp → swoop → arrival) → HANDOFF @3.5s → SCRUB (night → dawn →
+  network-map lines drawing in).
+- `scrub_preview.gif` — animated phase-2 scrub (3.5→13s), i.e. what scrolling reveals.
+- `full_sequence.gif` — the whole 0→13s clip.
+
+Live in-browser note: the hero scrub is **gated to `innerWidth >= 768`** (below
+that the hero is intentionally static). To sanity-check locally, serve the repo
+and open it in a normal-width desktop browser:
+`python3 -m http.server 8099` then scroll the hero.
+
 ## Files
 
 ```
