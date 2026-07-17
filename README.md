@@ -23,22 +23,28 @@ Other videos in the page (`media/what-we-do-*.mp4`, plus a Section-6 background
 clip that is base64-inlined inside the `__bundler/manifest` in `index.html`) are
 unrelated to the hero sequence.
 
-## The task
+## The task — DONE (Option A: split into the existing two slots, no JS changes)
 
-Replace the hero with `source-assets/new-hero-combined-4k-hevc.mp4` — a **single
-13.0s 4K HEVC clip that contains both phases** (zoom → retail) back-to-back.
+Replaced the hero with `source-assets/new-hero-combined-4k-hevc.mp4` — a single
+13.04s 4K/24fps/10-bit HEVC clip containing both phases (zoom → retail).
 
-### Plan (Option A — split into the existing two slots; no JS changes)
+**Split point: 3.500s** (frame 84 of 24fps) — the exact frame where the aerial
+swoop settles onto the locked storefront composition. The source was cut there
+and both halves transcoded to web-safe **H.264 / 1080p / 8-bit**:
 
-1. Find the cut frame where the planetary zoom settles into the retail space
-   (old split was ~4.0s / ~8.0s).
-2. Split the source clip at that point.
-3. **Transcode both pieces to H.264 MP4** (the source is HEVC/H.265, which does
-   **not** scrub reliably in Chrome/Firefox), likely downscaled 4K→1080p.
-4. Re-encode the scroll segment with a **dense keyframe interval** so
-   `currentTime` scrubbing stays smooth.
-5. Drop the results in as `media/sabre-loader-1080.mp4` (phase 1) and
-   `hero-scroll.mp4` (phase 2). Sequence is preserved by construction.
+| Slot | File | Source range | Encode | Size |
+|------|------|--------------|--------|------|
+| Phase 1 loader | `media/sabre-loader-1080.mp4` | 0 → 3.5s | H.264 High, CRF 19, +faststart | ~5.1 MB |
+| Phase 2 scrub | `hero-scroll.mp4` | 3.5 → 13.04s | H.264 High, CRF 20, **all-intra** (`keyint=1`) + faststart | ~32.8 MB |
+
+- HEVC→H.264 because HEVC does **not** scrub reliably in Chrome/Firefox.
+- The scrub is **all-intra** (every frame a keyframe) so `currentTime` scrubbing
+  lands frame-accurately with no decode lag.
+- Loader's last frame == scrub's first frame (verified), so the freeze-frame
+  cross-fade is seamless.
+- Sequence preserved by construction — **no HTML/JS changes**.
+
+Previous originals remain in Git history (the commit before the swap) for rollback.
 
 ## Files
 
