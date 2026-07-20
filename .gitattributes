@@ -5,6 +5,7 @@
 # The first-paint intro must be available to hosts that do not hydrate Git LFS.
 # It is intentionally small enough to live in normal Git.
 media/sabre-intro.mp4 -filter -diff -merge -text
+media/sabre-intro-mobile.mp4 -filter -diff -merge -text
 
 # Verification artifacts (storyboard + preview GIFs)
 verification/** filter=lfs diff=lfs merge=lfs -text

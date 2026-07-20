@@ -925,7 +925,7 @@ class Component extends DCLogic {
       });
       loaderVid = document.createElement('video');
       loaderVid.id = 'sabreBootVideo';
-      loaderVid.src = 'media/sabre-intro.mp4';
+      loaderVid.src = isMobileExperience ? 'media/sabre-intro-mobile.mp4' : 'media/sabre-intro.mp4';
       loaderVid.poster = 'media/sabre-loader-poster.jpg';
       loaderVid.autoplay = false;
       loaderVid.preload = 'auto';
@@ -988,6 +988,11 @@ class Component extends DCLogic {
     const primeHeroVideo = () => {
       const heroVid = document.getElementById('heroVideo');
       if (!heroVid || heroVid.dataset.sabreLoaded === 'true') return;
+      const heroSource = heroVid.querySelector('source');
+      const desiredHeroSource = isMobileExperience ? 'media/hero-scroll-mobile.mp4' : 'hero-scroll.mp4';
+      if (heroSource && heroSource.getAttribute('src') !== desiredHeroSource) {
+        heroSource.setAttribute('src', desiredHeroSource);
+      }
       heroVid.dataset.sabreLoaded = 'true';
       heroVid.preload = 'auto';
       heroVid.setAttribute('preload', 'auto');
@@ -1073,7 +1078,9 @@ class Component extends DCLogic {
         if (loaderVid.ended) { revealSite(); return; }
         const duration = loaderVid.duration;
         const ratio = updateBootProgress();
-        if (!Number.isFinite(duration) || duration <= 0 || ratio < 0.985) return;
+        const requiredBuffer = isMobileExperience ? 0.78 : 0.985;
+        const mobileCanStream = isMobileExperience && loaderVid.readyState >= 4 && ratio >= 0.5;
+        if (!Number.isFinite(duration) || duration <= 0 || (ratio < requiredBuffer && !mobileCanStream)) return;
         introPlaybackStarted = true;
         stopIntroTimers();
         try { loaderVid.pause(); loaderVid.currentTime = 0; } catch (e) {}
@@ -1090,6 +1097,7 @@ class Component extends DCLogic {
       ['loadedmetadata', 'progress', 'canplaythrough', 'suspend'].forEach((eventName) => {
         loaderVid.addEventListener(eventName, startLoader);
       });
+      try { loaderVid.load(); } catch (e) {}
       bufferPoll = window.setInterval(startLoader, 120);
       startLoader();
       loaderVid.addEventListener('ended', revealSite, { once: true });
