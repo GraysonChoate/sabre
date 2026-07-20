@@ -1816,6 +1816,7 @@ class Component extends DCLogic {
     const activateCtaVideo = (video) => {
       refreshCtaVisibility();
       if (!video || prefersReduced || !ctaIsVisible) return;
+      if (activeCtaVideo === video && video.classList.contains('is-active')) return;
       window.clearTimeout(resetTimer);
       [bookVideo, exploreVideo].forEach((candidate) => {
         if (candidate && candidate !== video) {
@@ -1892,8 +1893,13 @@ class Component extends DCLogic {
     exploreTrigger?.addEventListener('mouseout', handleExploreLeave);
     exploreTrigger?.addEventListener('focus', handleExploreFocus);
     exploreTrigger?.addEventListener('blur', handleExploreLeave);
-    bookVideo?.addEventListener('ended', () => deactivateCtaVideo(bookVideo));
-    exploreVideo?.addEventListener('ended', () => deactivateCtaVideo(exploreVideo));
+    const handleCtaVideoEnded = (video) => {
+      video?.pause();
+      if (hasFinePointer && activeCtaVideo === video && video?.classList.contains('is-active')) return;
+      deactivateCtaVideo(video);
+    };
+    bookVideo?.addEventListener('ended', () => handleCtaVideoEnded(bookVideo));
+    exploreVideo?.addEventListener('ended', () => handleCtaVideoEnded(exploreVideo));
     const isCtaInView = () => {
       if (!ctaSection) return false;
       const rect = ctaSection.getBoundingClientRect();
