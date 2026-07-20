@@ -1027,14 +1027,22 @@ class Component extends DCLogic {
         } catch (e) {}
         heroVid.style.opacity = '1';
       }
-      if (heroVid && heroVid.readyState < 2) {
+      const heroReadyForScroll = () => {
+        if (!heroVid || !Number.isFinite(heroVid.duration) || heroVid.duration <= 0) return false;
+        let bufferedEnd = 0;
+        for (let index = 0; index < heroVid.buffered.length; index += 1) {
+          bufferedEnd = Math.max(bufferedEnd, heroVid.buffered.end(index));
+        }
+        const readyThrough = Math.min(heroVid.duration - 0.1, HERO_SCROLL_START + 3.6);
+        return heroVid.readyState >= 2 && bufferedEnd >= readyThrough;
+      };
+      if (heroVid && !heroReadyForScroll()) {
         let waited = 0;
         const poll = () => {
           waited += 100;
-          if (heroVid.readyState >= 2 || waited >= 4000) commitReveal();
+          if (heroReadyForScroll() || waited >= 6000) commitReveal();
           else setTimeout(poll, 100);
         };
-        heroVid.addEventListener('loadeddata', commitReveal, { once: true });
         setTimeout(poll, 100);
       } else {
         commitReveal();
@@ -1130,6 +1138,7 @@ class Component extends DCLogic {
     let heroScrubRaf = null;
     let heroScrubTarget = HERO_SCROLL_START;
     let heroScrubCurrent = HERO_SCROLL_START;
+    let heroLastSeekAt = 0;
     const clamp01 = (v) => Math.min(1, Math.max(0, v));
     const smoothstep = (v) => v * v * (3 - 2 * v);
     const range = (v, a, b) => smoothstep(clamp01((v - a) / Math.max(0.001, b - a)));
@@ -1144,13 +1153,19 @@ class Component extends DCLogic {
       const goal = Math.min(maxTime, Math.max(0, target));
       const current = Number.isFinite(heroScrubCurrent) ? heroScrubCurrent : (Number.isFinite(video.currentTime) ? video.currentTime : 0);
       const delta = goal - current;
+      const now = performance.now();
+      if (video.seeking || now - heroLastSeekAt < 34) return Math.abs(delta) >= 0.011;
       try {
         if (Math.abs(delta) < 0.011) {
           heroScrubCurrent = goal;
-          if (Math.abs(video.currentTime - goal) > 0.004) video.currentTime = goal;
+          if (Math.abs(video.currentTime - goal) > 0.004) {
+            heroLastSeekAt = now;
+            video.currentTime = goal;
+          }
           return false;
         }
         heroScrubCurrent = current + delta * ease;
+        heroLastSeekAt = now;
         video.currentTime = heroScrubCurrent;
       } catch (err) {
         return false;
