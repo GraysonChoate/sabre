@@ -2,21 +2,22 @@
 
 Source of truth for the SABRE marketing site and the in-progress **hero video swap**.
 
-> **Repo is private** and uses **Git LFS** for all video assets and `index.html`.
-> After cloning you must run `git lfs install` and `git lfs pull` or the `.mp4`
-> files (and `index.html`) will be small text pointers, not real media.
+> **Repo is private** and uses **Git LFS** for the large video assets. After
+> cloning you must run `git lfs install` and `git lfs pull` or those `.mp4`
+> files will be small text pointers, not real media. The small first-paint intro
+> is intentionally stored in normal Git so hosting platforms can always serve it.
 
 ---
 
 ## The hero sequence (what we're preserving)
 
-The intro is built from **two separate video files** playing two distinct roles.
+The experience uses a self-contained intro followed by the scroll-controlled hero.
 The logic lives in the inline `<script type="text/x-dc">` at the bottom of
 `index.html`.
 
 | Phase | Role | File | Duration | Mechanism |
 |-------|------|------|----------|-----------|
-| **1** | Page-load **planetary zoom** | `media/sabre-loader-1080.mp4` | ~4.0s | Autoplays fullscreen in an overlay with **scroll locked**. On end it cross-fades to the hero; its last frame is matched to hero frame 0 so it reads as one continuous shot. |
+| **1** | Page-load **planetary zoom** | `media/sabre-intro.mp4` | 4.3s | Parser-discovered autoplay video with an immediate poster and **scroll locked**. It includes the settled handoff frame, so no second network request is needed during the transition. |
 | **2** | **Parallax retail scene** | `hero-scroll.mp4` | ~8.0s | **True scroll-scrubbing** — the script eases `video.currentTime` toward a scroll-derived target (`currentTime = current + delta * ease`) inside a 420vh pinned section. Idles when you stop; moves forward/backward as you scroll. |
 
 Other videos in the page (`media/what-we-do-*.mp4`, plus a Section-6 background
