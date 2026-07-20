@@ -4,9 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 html.sabre-intro-pending, html.sabre-intro-pending body { overflow: hidden; background: #020203; }
-#sabreBootIntro { position: fixed; inset: 0; z-index: 9999; overflow: hidden; pointer-events: none; opacity: 1; background: #020203 url('media/sabre-loader-poster.jpg') center / cover no-repeat; transition: opacity 980ms cubic-bezier(0.16,1,0.3,1); }
-#sabreBootIntro video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #020203 url('media/sabre-loader-poster.jpg') center / cover no-repeat; }
+#sabreBootIntro { position: fixed; inset: 0; z-index: 9999; overflow: hidden; pointer-events: none; opacity: 1; background: #020203; transition: opacity 980ms cubic-bezier(0.16,1,0.3,1); }
+#sabreBootIntro video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; background: #020203; transition: opacity 220ms ease; }
+#sabreBootIntro.is-playing video { opacity: 1; }
+#sabreBootSplash { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; background: #020203; opacity: 1; transition: opacity 260ms ease; }
+#sabreBootSplash img { width: min(230px, 48vw); height: auto; opacity: 0.92; animation: sabreBootPulse 1.8s ease-in-out infinite; }
+#sabreBootTrack { width: 104px; height: 1px; overflow: hidden; background: rgba(255,255,255,0.18); }
+#sabreBootProgress { display: block; width: 100%; height: 100%; background: #edcf67; transform: scaleX(0.04); transform-origin: left center; transition: transform 180ms ease; }
+#sabreBootIntro.is-playing #sabreBootSplash { opacity: 0; }
 #sabreBootIntro.is-revealing { opacity: 0; }
+@keyframes sabreBootPulse { 0%,100% { opacity: 0.62; } 50% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { #sabreBootIntro { display: none; } }
 </style>
 <script>
@@ -20,9 +27,13 @@ window.__resources = {
 </head>
 <body>
 <div id="sabreBootIntro" aria-hidden="true">
-  <video id="sabreBootVideo" autoplay muted playsinline webkit-playsinline preload="auto" poster="media/sabre-loader-poster.jpg" disablepictureinpicture>
+  <video id="sabreBootVideo" muted playsinline webkit-playsinline preload="auto" poster="media/sabre-loader-poster.jpg" disablepictureinpicture>
     <source src="media/sabre-intro.mp4" type="video/mp4">
   </video>
+  <div id="sabreBootSplash">
+    <img src="media/sabre-white-logo-transparent.png" alt="">
+    <span id="sabreBootTrack"><span id="sabreBootProgress"></span></span>
+  </div>
 </div>
 <x-dc>
 <helmet>
@@ -549,7 +560,7 @@ window.__resources = {
   <!-- ============ SECTION 1: HERO ============ -->
   <header id="hero" data-screen-label="Hero" style="position:relative; width:100%; height:420vh; min-height:calc(640px + 320vh); overflow:visible; display:block; background:#020203;">
     <div id="heroStage" style="position:absolute; top:0; left:0; width:100%; height:100vh; min-height:640px; overflow:hidden; display:flex; align-items:center;">
-    <video id="heroVideo" muted="" playsinline="" preload="auto" poster="media/hero-mobile-poster.jpg" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:1; filter:none; transition:opacity 800ms cubic-bezier(0.16,1,0.3,1); background:#020203 url('media/hero-mobile-poster.jpg') center / cover no-repeat;">
+    <video id="heroVideo" muted="" playsinline="" preload="none" poster="media/hero-mobile-poster.jpg" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:1; filter:none; transition:opacity 800ms cubic-bezier(0.16,1,0.3,1); background:#020203 url('media/hero-mobile-poster.jpg') center / cover no-repeat;">
       <source src="hero-scroll.mp4" type="video/mp4">
     </video>
     <!-- depth gradient: darker top-left -> lighter bottom-right, ~60% -->
@@ -615,7 +626,7 @@ window.__resources = {
   <section id="brands" style="position:relative; z-index:5; color:#050506; padding:0; background:#030303; overflow:visible; height:420vh;">
     <div class="sabre-wwd-pin-stage">
     <div class="sabre-wwd-upper" style="position:relative; isolation:isolate; background:#e8dece; min-height:300px; padding:92px 48px 72px; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(67,54,38,0.22); box-shadow:inset 0 26px 72px rgba(255,255,255,0.48), inset 0 -34px 70px rgba(126,100,66,0.10); overflow:hidden;">
-      <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-upper.mp4" type="video/mp4"></video>
+      <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-upper.mp4" type="video/mp4"></video>
       <div class="sabre-panel-scrim"></div>
       <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.72; background-image:radial-gradient(circle at 18% 18%, rgba(255,250,240,0.78), transparent 28%), radial-gradient(circle at 88% 18%, rgba(237,207,103,0.22), transparent 30%), radial-gradient(circle at 68% 86%, rgba(6,36,42,0.05), transparent 34%), repeating-linear-gradient(0deg, rgba(46,37,26,0.035) 0 1px, transparent 1px 5px), repeating-linear-gradient(90deg, rgba(46,37,26,0.026) 0 1px, transparent 1px 7px); mix-blend-mode:multiply;"></div>
       <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.38; background-image:linear-gradient(90deg, transparent 0 59%, rgba(44,47,45,0.18) 59% 59.15%, transparent 59.15%), linear-gradient(0deg, transparent 0 44%, rgba(44,47,45,0.14) 44% 44.18%, transparent 44.18%), linear-gradient(135deg, transparent 0 68%, rgba(44,47,45,0.18) 68% 68.16%, transparent 68.16%), radial-gradient(circle at 71% 33%, transparent 0 10px, rgba(34,42,42,0.42) 11px 12px, transparent 13px), radial-gradient(circle at 83% 52%, transparent 0 6px, rgba(34,42,42,0.28) 7px 8px, transparent 9px);"></div>
@@ -626,7 +637,7 @@ window.__resources = {
     </div>
     <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; width:100%; border-top:1px solid rgba(198,157,91,0.62);" data-stack="1024">
       <div class="sabre-wwd-brands" data-reveal="up" style="position:relative; isolation:isolate; min-height:620px; background:#14130f; color:#f5f2ea; padding:88px clamp(38px,5vw,96px); opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1); overflow:hidden; box-shadow:inset 0 1px 0 rgba(255,255,255,0.07), inset -36px 0 90px rgba(198,157,91,0.07);">
-        <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-brands.mp4" type="video/mp4"></video>
+        <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-brands.mp4" type="video/mp4"></video>
         <div class="sabre-panel-scrim"></div>
         <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.70; background-image:radial-gradient(circle at 12% 0%, rgba(255,255,255,0.08), transparent 24%), radial-gradient(circle at 85% 87%, rgba(198,157,91,0.20), transparent 34%), repeating-linear-gradient(102deg, rgba(255,255,255,0.034) 0 1px, transparent 1px 10px), repeating-linear-gradient(13deg, rgba(255,255,255,0.020) 0 1px, transparent 1px 17px), linear-gradient(135deg, rgba(255,255,255,0.055), transparent 28%);"></div>
         <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.22; background-image:radial-gradient(circle at 23% 26%, rgba(255,255,255,0.08) 0 1px, transparent 1.6px), radial-gradient(circle at 61% 61%, rgba(255,255,255,0.05) 0 1px, transparent 1.8px); background-size:11px 11px, 17px 17px;"></div>
@@ -643,7 +654,7 @@ window.__resources = {
         </div>
       </div>
       <div id="landlords" class="sabre-wwd-landlords" data-reveal="up" data-delay="120" style="position:relative; isolation:isolate; min-height:620px; background:#d4d6d2; color:#070707; padding:88px clamp(38px,5vw,96px); opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1); overflow:hidden; box-shadow:inset 0 1px 0 rgba(255,255,255,0.62), inset 30px 0 80px rgba(11,64,80,0.035);">
-        <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-landlords.mp4" type="video/mp4"></video>
+        <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="none" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-landlords.mp4" type="video/mp4"></video>
         <div class="sabre-panel-scrim"></div>
         <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.62; background-image:radial-gradient(circle at 86% 76%, rgba(237,207,103,0.28), transparent 16%), radial-gradient(circle at 6% 0%, rgba(255,255,255,0.72), transparent 30%), repeating-linear-gradient(0deg, rgba(10,20,22,0.034) 0 1px, transparent 1px 6px), repeating-linear-gradient(90deg, rgba(10,20,22,0.025) 0 1px, transparent 1px 8px), linear-gradient(135deg, rgba(255,255,255,0.26), transparent 34%); mix-blend-mode:multiply;"></div>
         <div class="sabre-panel-content" style="max-width:620px;">
@@ -739,7 +750,7 @@ window.__resources = {
 
   <!-- ============ SECTION 6: VERTICALS ============ -->
   <section class="sabre-material-dark sabre-verticals-section" style="position:relative; background:#020203; color:#fff; padding:120px 0; overflow:hidden;">
-    <video id="verticalsLoopVideo" data-loop-video="" muted="" loop="" playsinline="" preload="auto" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+    <video id="verticalsLoopVideo" data-loop-video="" muted="" loop="" playsinline="" preload="none" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;">
       <source src="53f9d838-427e-4227-bc46-1ea064fafc1a" type="video/mp4">
     </video>
     <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(135deg, rgba(2,2,3,0.9) 0%, rgba(2,2,3,0.72) 55%, rgba(2,2,3,0.82) 100%);"></div>
@@ -761,7 +772,7 @@ window.__resources = {
   <!-- ============ SECTION 7: CULTURE ============ -->
   <section id="culture" class="sabre-material-dark sabre-culture-section" style="background:#020203; padding:140px 0;">
     <div class="sabre-culture-media" aria-hidden="true">
-      <video id="cultureDnaVideo" class="sabre-culture-video" data-loop-video muted loop autoplay playsinline preload="auto">
+      <video id="cultureDnaVideo" class="sabre-culture-video" data-loop-video muted loop playsinline preload="none">
         <source src="media/culture/sabre-dna-background.mp4" type="video/mp4">
       </video>
     </div>
@@ -777,13 +788,13 @@ window.__resources = {
   <!-- ============ SECTION 8: FINAL CTA ============ -->
   <section id="contact" class="sabre-cta sabre-cta-section" style="background:#022F3B; padding:130px 0;">
     <div class="sabre-cta__media" aria-hidden="true">
-      <video id="sabreCtaIdle" class="sabre-cta__video sabre-cta__video--idle" data-cta-video muted playsinline loop preload="auto" poster="media/cta/sabre-cta-poster.png">
+      <video id="sabreCtaIdle" class="sabre-cta__video sabre-cta__video--idle" data-cta-video muted playsinline loop preload="none" poster="media/cta/sabre-cta-poster.png">
         <source src="media/cta/sabre-cta-idle.mp4" type="video/mp4">
       </video>
-      <video id="sabreCtaBook" class="sabre-cta__video sabre-cta__video--activation" data-cta-video muted playsinline preload="auto" poster="media/cta/sabre-cta-poster.png">
+      <video id="sabreCtaBook" class="sabre-cta__video sabre-cta__video--activation" data-cta-video muted playsinline preload="none" poster="media/cta/sabre-cta-poster.png">
         <source src="media/cta/sabre-cta-book.mp4" type="video/mp4">
       </video>
-      <video id="sabreCtaExplore" class="sabre-cta__video sabre-cta__video--activation" data-cta-video muted playsinline preload="auto" poster="media/cta/sabre-cta-poster.png">
+      <video id="sabreCtaExplore" class="sabre-cta__video sabre-cta__video--activation" data-cta-video muted playsinline preload="none" poster="media/cta/sabre-cta-poster.png">
         <source src="media/cta/sabre-cta-explore.mp4" type="video/mp4">
       </video>
       <div class="sabre-cta__veil"></div>
@@ -947,22 +958,46 @@ class Component extends DCLogic {
       overlay.id = 'sabreBootIntro';
       Object.assign(overlay.style, {
         position: 'fixed', inset: '0', zIndex: '9999', overflow: 'hidden',
-        background: "#020203 url('media/sabre-loader-poster.jpg') center / cover no-repeat",
+        background: '#020203',
         transition: 'opacity 980ms cubic-bezier(0.16,1,0.3,1)', pointerEvents: 'none', opacity: '1',
       });
       loaderVid = document.createElement('video');
       loaderVid.id = 'sabreBootVideo';
       loaderVid.src = 'media/sabre-intro.mp4';
       loaderVid.poster = 'media/sabre-loader-poster.jpg';
-      loaderVid.autoplay = true;
+      loaderVid.autoplay = false;
       loaderVid.preload = 'auto';
       Object.assign(loaderVid.style, {
         position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover',
-        background: "#020203 url('media/sabre-loader-poster.jpg') center / cover no-repeat",
+        background: '#020203', opacity: '0', transition: 'opacity 220ms ease',
       });
+      const splash = document.createElement('div');
+      splash.id = 'sabreBootSplash';
+      Object.assign(splash.style, {
+        position: 'absolute', inset: '0', zIndex: '2', display: 'flex', flexDirection: 'column',
+        alignItems: 'center', justifyContent: 'center', gap: '24px', background: '#020203',
+        opacity: '1', transition: 'opacity 260ms ease',
+      });
+      const splashLogo = document.createElement('img');
+      splashLogo.src = 'media/sabre-white-logo-transparent.png';
+      splashLogo.alt = '';
+      Object.assign(splashLogo.style, { width: 'min(230px, 48vw)', height: 'auto', opacity: '0.92' });
+      const splashTrack = document.createElement('span');
+      Object.assign(splashTrack.style, { width: '104px', height: '1px', overflow: 'hidden', background: 'rgba(255,255,255,0.18)' });
+      const splashProgress = document.createElement('span');
+      splashProgress.id = 'sabreBootProgress';
+      Object.assign(splashProgress.style, {
+        display: 'block', width: '100%', height: '100%', background: '#edcf67',
+        transform: 'scaleX(0.04)', transformOrigin: 'left center', transition: 'transform 180ms ease',
+      });
+      splashTrack.appendChild(splashProgress);
+      splash.appendChild(splashLogo);
+      splash.appendChild(splashTrack);
       overlay.appendChild(loaderVid);
+      overlay.appendChild(splash);
       document.body.appendChild(overlay);
     }
+    loaderVid.autoplay = false;
     loaderVid.muted = true;
     loaderVid.defaultMuted = true;
     loaderVid.playsInline = true;
@@ -973,18 +1008,44 @@ class Component extends DCLogic {
     // Hold the intro as a deliberate moment: pin to top + lock scroll while it plays, then release.
     try { window.scrollTo(0, 0); } catch (e) {}
     const prevOverflow = document.documentElement.style.overflow;
-    let loaderDone = false, revealed = false;
+    const bootProgress = document.getElementById('sabreBootProgress');
+    const bootSplash = document.getElementById('sabreBootSplash');
+    let loaderDone = false, revealed = false, introPlaybackStarted = false;
+    let bufferPoll = null, introSafetyTimer = null;
+    window.__sabreIntroComplete = false;
+    const runAfterIntro = (callback) => {
+      if (window.__sabreIntroComplete) callback();
+      else window.addEventListener('sabre:intro-complete', callback, { once: true });
+    };
+    const stopIntroTimers = () => {
+      if (bufferPoll) window.clearInterval(bufferPoll);
+      if (introSafetyTimer) window.clearTimeout(introSafetyTimer);
+      bufferPoll = null;
+      introSafetyTimer = null;
+    };
+    const primeHeroVideo = () => {
+      const heroVid = document.getElementById('heroVideo');
+      if (!heroVid || heroVid.dataset.sabreLoaded === 'true') return;
+      heroVid.dataset.sabreLoaded = 'true';
+      heroVid.preload = 'auto';
+      heroVid.setAttribute('preload', 'auto');
+      try { heroVid.load(); } catch (e) {}
+    };
     const commitReveal = () => {
       if (revealed) return; revealed = true;
+      stopIntroTimers();
       document.documentElement.classList.remove('sabre-intro-pending');
       document.documentElement.style.overflow = prevOverflow;
       if (this._nav) this._nav.style.opacity = '1';
       overlay.classList.add('is-revealing');
       overlay.style.opacity = '0';
+      window.__sabreIntroComplete = true;
+      window.dispatchEvent(new Event('sabre:intro-complete'));
       setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 1000);
     };
     const revealSite = () => {
       if (loaderDone) return; loaderDone = true;
+      primeHeroVideo();
       const heroVid = document.getElementById('heroVideo');
       if (heroVid) {
         try {
@@ -1023,21 +1084,50 @@ class Component extends DCLogic {
     } else {
       document.documentElement.classList.add('sabre-intro-pending');
       document.documentElement.style.overflow = 'hidden';
-      const startLoader = () => {
-        if (loaderDone) return;
-        if (loaderVid.ended) { revealSite(); return; }
-        const p = loaderVid.play();
-        if (p && p.catch) p.catch(() => {});
+      const getBufferedRatio = () => {
+        const duration = loaderVid.duration;
+        if (!Number.isFinite(duration) || duration <= 0 || !loaderVid.buffered.length) return 0;
+        let bufferedEnd = 0;
+        for (let index = 0; index < loaderVid.buffered.length; index += 1) {
+          bufferedEnd = Math.max(bufferedEnd, loaderVid.buffered.end(index));
+        }
+        return Math.min(1, bufferedEnd / duration);
       };
-      loaderVid.addEventListener('loadeddata', startLoader, { once: true });
-      loaderVid.addEventListener('canplay', startLoader, { once: true });
+      const updateBootProgress = () => {
+        const ratio = getBufferedRatio();
+        if (bootProgress) bootProgress.style.transform = 'scaleX(' + Math.max(0.04, ratio).toFixed(3) + ')';
+        return ratio;
+      };
+      const startLoader = () => {
+        if (loaderDone || introPlaybackStarted) return;
+        if (loaderVid.ended) { revealSite(); return; }
+        const duration = loaderVid.duration;
+        const ratio = updateBootProgress();
+        if (!Number.isFinite(duration) || duration <= 0 || ratio < 0.985) return;
+        introPlaybackStarted = true;
+        stopIntroTimers();
+        try { loaderVid.pause(); loaderVid.currentTime = 0; } catch (e) {}
+        primeHeroVideo();
+        const play = loaderVid.play();
+        const showIntro = () => {
+          overlay.classList.add('is-playing');
+          loaderVid.style.opacity = '1';
+          if (bootSplash) bootSplash.style.opacity = '0';
+        };
+        if (play && play.then) play.then(showIntro).catch(revealSite);
+        else showIntro();
+      };
+      ['loadedmetadata', 'progress', 'canplaythrough', 'suspend'].forEach((eventName) => {
+        loaderVid.addEventListener(eventName, startLoader);
+      });
+      bufferPoll = window.setInterval(startLoader, 120);
       startLoader();
       loaderVid.addEventListener('ended', revealSite, { once: true });
       loaderVid.addEventListener('error', revealSite, { once: true });
       if (loaderVid.ended) requestAnimationFrame(revealSite);
-      setTimeout(() => {
-        if (!loaderDone && (loaderVid.paused || loaderVid.currentTime < 0.1)) revealSite();
-      }, 8000);
+      introSafetyTimer = window.setTimeout(() => {
+        if (!loaderDone && !introPlaybackStarted) revealSite();
+      }, 15000);
     }
 
     // ---- Hero load choreography ----
@@ -1508,24 +1598,38 @@ class Component extends DCLogic {
     prepareWwdCopy();
     if (isMobileExperience) {
       wwdCopyGroups.forEach((group) => revealWwdCopy(group.items, 1));
+    }
+    let wwdMediaStarted = false;
+    const startWwdMedia = () => {
+      if (wwdMediaStarted) return;
+      wwdMediaStarted = true;
       wwdVideos.forEach((video) => {
         video.muted = true;
-        video.removeAttribute('autoplay');
-        video.setAttribute('preload', 'metadata');
-        try { video.pause(); } catch (err) {}
-      });
-    } else {
-      wwdVideos.forEach((video) => {
-        video.muted = true;
+        video.dataset.sabreLoaded = 'true';
+        video.setAttribute('preload', isMobileExperience ? 'metadata' : 'auto');
+        if (isMobileExperience) {
+          video.removeAttribute('autoplay');
+          try { video.load(); video.pause(); } catch (err) {}
+          return;
+        }
         video.loop = true;
         video.setAttribute('loop', '');
         video.setAttribute('autoplay', '');
-        video.setAttribute('preload', 'auto');
-        const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+        const play = () => { const promise = video.play(); if (promise && promise.catch) promise.catch(() => {}); };
+        try { video.load(); } catch (err) {}
         play();
         video.addEventListener('canplay', play, { once: true });
       });
-    }
+    };
+    runAfterIntro(() => {
+      if (!whatWeDoSection || !('IntersectionObserver' in window)) { startWwdMedia(); return; }
+      const wwdMediaObserver = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        startWwdMedia();
+        wwdMediaObserver.disconnect();
+      }, { rootMargin: '120% 0px', threshold: 0.01 });
+      wwdMediaObserver.observe(whatWeDoSection);
+    });
     window.addEventListener('scroll', syncWwdScrub, { passive: true });
     window.addEventListener('resize', () => { updateWwdPin(); wwdTargetProgress = getWwdScrollProgress(); wwdSequences.forEach((sequence) => { sequence.lastFrame = -1; }); renderWwdFrames(wwdProgress, true); queueWwd(); });
     setTimeout(() => { wwdTargetProgress = getWwdScrollProgress(); wwdProgress = wwdTargetProgress; applyWwdVisuals(wwdProgress); renderWwdFrames(wwdProgress, true); }, prefersReduced ? 0 : 300);
@@ -1574,7 +1678,7 @@ class Component extends DCLogic {
     }
 
     // ---- Ensure non-scrubbed videos play immediately ----
-    document.querySelectorAll('video:not([data-scroll-video]):not([data-loop-video]):not([data-cta-video]):not(#heroVideo):not(.sabre-panel-video)').forEach((vid) => {
+    document.querySelectorAll('video:not([data-scroll-video]):not([data-loop-video]):not([data-cta-video]):not(#sabreBootVideo):not(#heroVideo):not(.sabre-panel-video)').forEach((vid) => {
       vid.muted = true;
       if (typeof vid.play !== 'function') return;
       const tryPlay = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
@@ -1605,6 +1709,12 @@ class Component extends DCLogic {
       video.setAttribute('muted', '');
       video.setAttribute('playsinline', '');
       video.setAttribute('autoplay', '');
+      if (video.dataset.sabreLoaded !== 'true') {
+        video.dataset.sabreLoaded = 'true';
+        video.preload = 'auto';
+        video.setAttribute('preload', 'auto');
+        try { video.load(); } catch (err) {}
+      }
       if (typeof video.play !== 'function') return;
       const play = video.play();
       if (play && play.catch) play.catch(() => {});
@@ -1652,6 +1762,12 @@ class Component extends DCLogic {
     const safePlay = (video) => {
       if (!video) return;
       video.muted = true;
+      if (video.dataset.sabreLoaded !== 'true') {
+        video.dataset.sabreLoaded = 'true';
+        video.preload = 'auto';
+        video.setAttribute('preload', 'auto');
+        try { video.load(); } catch (error) {}
+      }
       const promise = video.play();
       if (promise && typeof promise.catch === 'function') promise.catch(() => {});
     };
