@@ -1,3 +1,1930 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:849cb9ab21d9f2a9fafb00df50a8aa64ce56651f69c0c7837d3c5353e355720a
-size 102375231
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.__resources = {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "ccff5c9e-ff32-41c2-984a-2c1dd003de41",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "16e90517-22d9-4f91-8cd2-75fccba95bb1"
+};
+</script>
+<script src="0e957c85-3ec8-48bc-9354-2b22384826c7"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<style>/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("7aece009-e002-4f31-926f-53b25ea5da85") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("b75370ba-eab7-4fbb-a2c4-ac956d045e5b") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("2757f843-5d05-4b6c-bc2b-cb4a3b0a5f3c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("34f50c60-bbb2-4e52-add4-b0a4c493fcfc") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("8c537dd6-d65f-472d-9195-1403dc8e19f6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("7aece009-e002-4f31-926f-53b25ea5da85") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b75370ba-eab7-4fbb-a2c4-ac956d045e5b") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("2757f843-5d05-4b6c-bc2b-cb4a3b0a5f3c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("34f50c60-bbb2-4e52-add4-b0a4c493fcfc") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8c537dd6-d65f-472d-9195-1403dc8e19f6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("7aece009-e002-4f31-926f-53b25ea5da85") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("b75370ba-eab7-4fbb-a2c4-ac956d045e5b") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("2757f843-5d05-4b6c-bc2b-cb4a3b0a5f3c") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("34f50c60-bbb2-4e52-add4-b0a4c493fcfc") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("8c537dd6-d65f-472d-9195-1403dc8e19f6") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("8c71e86d-3002-4acf-8c12-ddd7365dd565") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("367986ae-79b7-4038-a240-07236d030b91") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("d1f8e18d-4cf0-4100-a306-617d107e3326") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e5ac1c41-3b0f-4698-b5ac-48d10af67947") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("0b4e3cb6-20eb-4167-8193-ba00040fdae2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("71901ac9-a7af-40ff-adb4-fe6682adb63c") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+  #navLogo img { max-width:100%; }
+  @media (max-width: 767px) { #navLogo { width:136px !important; height:30px !important; } }</style>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Montserrat', sans-serif; background: #020203; color: #fff; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  a:hover { color: inherit; }
+  ::selection { background: #EDCF67; color: #020203; }
+  @keyframes chevBounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes grainShift {
+    0%   { transform: translate(0,0); }
+    10%  { transform: translate(-4%,-4%); }
+    20%  { transform: translate(-8%,3%); }
+    30%  { transform: translate(5%,-6%); }
+    40%  { transform: translate(-3%,7%); }
+    50%  { transform: translate(-9%,-2%); }
+    60%  { transform: translate(7%,1%); }
+    70%  { transform: translate(-2%,5%); }
+    80%  { transform: translate(4%,-5%); }
+    90%  { transform: translate(-6%,4%); }
+    100% { transform: translate(0,0); }
+  }
+  @keyframes glowPulse {
+    0%,100% { box-shadow: 0 0 0 rgba(237,207,103,0.0), 0 12px 30px rgba(237,207,103,0.28); }
+    50%     { box-shadow: 0 0 26px rgba(237,207,103,0.55), 0 12px 38px rgba(237,207,103,0.4); }
+  }
+  @keyframes pinRipple {
+    0%   { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(3.4); opacity: 0; }
+  }
+  @keyframes heroSignalSweep {
+    0% { transform: translateX(-120%); opacity: 0; }
+    18% { opacity: 0.75; }
+    100% { transform: translateX(120%); opacity: 0; }
+  }
+  @keyframes sabreCurveRecalc {
+    0% { height:0; filter:brightness(.88); }
+    14% { height:0; filter:brightness(.95); }
+    54%, 78% { height:var(--bar-h); filter:brightness(1.08); }
+    100% { height:0; filter:brightness(.92); }
+  }
+  @keyframes sabreCurveLabelRecalc {
+    0%, 12% { opacity:.28; transform:translateY(8px); }
+    42%, 78% { opacity:1; transform:translateY(0); }
+    100% { opacity:.28; transform:translateY(8px); }
+  }
+  .heroWord {
+    clip-path: inset(0 100% 0 0);
+    filter: blur(8px);
+    will-change: transform, opacity, filter, clip-path;
+  }
+  #heroCopy {
+    --hero-readability: 0;
+    --hero-copy-x: 0px;
+    --hero-copy-y: 0px;
+    isolation: isolate;
+  }
+  #heroCopy::before {
+    content: "";
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    width: min(780px, calc(100% - 48px));
+    height: min(560px, 74vh);
+    transform: translate3d(var(--hero-copy-x), calc(-50% + var(--hero-copy-y)), 0);
+    z-index: -1;
+    pointer-events: none;
+    opacity: var(--hero-readability);
+    background:
+      radial-gradient(ellipse at 34% 48%, rgba(2, 2, 3, 0.54) 0%, rgba(2, 2, 3, 0.42) 34%, rgba(2, 2, 3, 0.20) 58%, rgba(2, 2, 3, 0) 78%),
+      linear-gradient(90deg, rgba(2, 2, 3, 0.44), rgba(2, 2, 3, 0.20) 54%, rgba(2, 2, 3, 0));
+    filter: blur(10px);
+    transition: opacity 180ms linear;
+  }
+  #heroKicker, #heroBody, #heroActions { will-change: transform, opacity, filter; }
+  @media (max-width: 767px) {
+    #pinLines { display: none; }
+    [data-pin] .pinMarker { width: 17px !important; height: 22px !important; }
+  }
+  @media (pointer: fine) { a, button, [data-cursor] { cursor: pointer; } }
+  @media (prefers-reduced-motion: reduce) {
+    [data-load], .hw { opacity: 1 !important; transform: none !important; filter: none !important; clip-path: none !important; }
+    #heroVideo { transform: none !important; filter: brightness(1.12) contrast(1.03) saturate(1.04) !important; }
+    #heroGrain { animation: none !important; }
+  }
+</style>
+</helmet>
+
+<div style="width:100%; overflow-x:clip; background:#020203;">
+
+  <!-- ============ NAV ============ -->
+  <style>
+  body { overflow-x:hidden; }
+  @media (max-width: 700px) {
+    nav { padding:18px 20px !important; align-items:flex-start !important; gap:16px !important; }
+    #navLogo { font-size:18px !important; letter-spacing:0.28em !important; }
+    nav > div { max-width:210px !important; justify-content:flex-end !important; gap:10px 18px !important; flex-wrap:wrap !important; font-size:9px !important; line-height:1.35 !important; letter-spacing:0.12em !important; }
+    #heroCopy { padding:0 28px !important; }
+    #heroTitle { font-size:clamp(36px, 12vw, 50px) !important; line-height:1.06 !important; max-width:100% !important; }
+    #heroBody { max-width:100% !important; }
+    #brands > div:first-child { padding:72px 28px 64px !important; min-height:274px !important; }
+    #brands h2 { font-size:clamp(33px, 10.6vw, 43px) !important; line-height:1.06 !important; max-width:100% !important; }
+    #brands h2 span { white-space:normal !important; }
+    #brands [data-reveal] { transform:none !important; }
+  }
+  @media (max-width: 430px) {
+    nav > div { max-width:190px !important; gap:8px 14px !important; }
+    #navLogo { font-size:17px !important; letter-spacing:0.24em !important; }
+    #brands h2 { font-size:clamp(31px, 10vw, 39px) !important; }
+  }
+</style>
+
+<style>
+  .sabre-panel-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0; pointer-events:none; transform:translate3d(0,0,0) scale(1.012); transform-origin:50% 50%; will-change:transform; }
+  .sabre-scrub-canvas { position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; opacity:0; transform:translate3d(0,0,0) scale(1.012); transform-origin:50% 50%; will-change:transform, opacity; }
+  .sabre-scrub-ready .sabre-scrub-canvas { opacity:1; transition:opacity 620ms cubic-bezier(.16,1,.3,1); }
+  .sabre-scrub-ready .sabre-panel-video { opacity:0; transition:opacity 620ms cubic-bezier(.16,1,.3,1); }
+  .sabre-wwd-looping .sabre-scrub-canvas { opacity:0; }
+  .sabre-wwd-looping .sabre-panel-video { opacity:1; }
+  .sabre-panel-content { position:relative; z-index:2; transform:translate3d(0,0,0); will-change:transform, opacity, filter; }
+  #brands { will-change:auto; }
+  .sabre-wwd-pin-stage { position:absolute; top:0; left:0; right:0; width:100%; height:calc(100vh - 70px); min-height:720px; overflow:hidden; display:grid; grid-template-rows:minmax(285px,38vh) minmax(0,1fr); background:#030303; box-shadow:0 -1px 0 rgba(255,255,255,0.06), 0 1px 0 rgba(255,255,255,0.04); }
+  .sabre-wwd-pin-stage > .sabre-wwd-upper { min-height:0 !important; height:auto !important; padding-top:clamp(78px,9vh,112px) !important; padding-bottom:clamp(44px,6vh,80px) !important; }
+  .sabre-wwd-pin-stage > [data-stack] { min-height:0; height:100%; }
+  .sabre-wwd-pin-stage .sabre-wwd-brands, .sabre-wwd-pin-stage .sabre-wwd-landlords { min-height:0 !important; height:100%; padding-top:clamp(54px,7vh,88px) !important; padding-bottom:clamp(42px,6vh,88px) !important; }
+  .sabre-wwd-pin-stage .sabre-panel-content { transition:none !important; }
+  .sabre-wwd-copy-step { will-change:transform, opacity, filter, clip-path; }
+  @media (max-width:1024px) { .sabre-wwd-pin-stage { grid-template-rows:minmax(300px,40vh) minmax(0,1fr); } .sabre-wwd-pin-stage h2 { font-size:clamp(38px,7vw,58px) !important; line-height:1.03 !important; } }
+  @media (max-width:767px) { #brands { min-height:auto !important; height:auto !important; overflow:hidden !important; } .sabre-wwd-pin-stage { position:relative; top:auto; height:auto; min-height:0; display:block; overflow:hidden; } .sabre-wwd-pin-stage > [data-stack] { height:auto; } }
+  .sabre-panel-scrim { position:absolute; inset:0; z-index:1; pointer-events:none; }
+  .sabre-wwd-upper .sabre-panel-video { object-position:50% 50%; }
+  .sabre-wwd-upper .sabre-panel-scrim { background:linear-gradient(90deg, rgba(244,239,229,0.30) 0%, rgba(244,239,229,0.16) 46%, rgba(244,239,229,0.00) 70%); }
+  .sabre-wwd-brands .sabre-panel-video { object-position:68% 50%; }
+  .sabre-wwd-brands .sabre-panel-scrim { background:linear-gradient(90deg, rgba(8,8,8,0.80) 0%, rgba(8,8,8,0.64) 46%, rgba(8,8,8,0.16) 76%, rgba(8,8,8,0.02) 100%); }
+  .sabre-wwd-landlords .sabre-panel-video { object-position:68% 50%; }
+  .sabre-wwd-landlords .sabre-panel-scrim { background:linear-gradient(90deg, rgba(220,225,226,0.86) 0%, rgba(220,225,226,0.68) 48%, rgba(220,225,226,0.12) 78%, rgba(220,225,226,0.00) 100%); }
+  .sabre-material-dark { position:relative; overflow:hidden; isolation:isolate; background:#020203; }
+  .sabre-material-dark::before { content:""; position:absolute; inset:-1px; z-index:0; pointer-events:none; opacity:.95; background-image:radial-gradient(circle at 28% 34%, rgba(75,185,190,.20), transparent 18%), radial-gradient(circle at 49% 34%, rgba(237,207,103,.12), transparent 18%), radial-gradient(circle at 80% 72%, rgba(237,207,103,.07), transparent 22%), repeating-linear-gradient(0deg, rgba(255,255,255,.030) 0 1px, transparent 1px 42px), repeating-linear-gradient(90deg, rgba(255,255,255,.024) 0 1px, transparent 1px 42px), repeating-linear-gradient(107deg, rgba(255,255,255,.023) 0 1px, transparent 1px 13px); background-color:#030404; }
+  .sabre-material-dark::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.78; background-image:linear-gradient(90deg, transparent 0 49.94%, rgba(237,207,103,.22) 49.94% 50.02%, transparent 50.02%), linear-gradient(180deg, rgba(255,255,255,.06), transparent 16%, transparent 82%, rgba(0,0,0,.55)), radial-gradient(ellipse at 50% 50%, transparent 0 56%, rgba(0,0,0,.48) 100%); }
+  .sabre-material-limestone { position:relative; overflow:hidden; isolation:isolate; }
+  .sabre-material-limestone::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.42; background-image:radial-gradient(circle at 80% 16%, rgba(237,207,103,.18), transparent 28%), repeating-linear-gradient(0deg, rgba(46,37,26,.026) 0 1px, transparent 1px 6px), repeating-linear-gradient(90deg, rgba(46,37,26,.018) 0 1px, transparent 1px 8px), linear-gradient(125deg, transparent 0 61%, rgba(11,64,80,.12) 61% 61.16%, transparent 61.16%); }
+  .sabre-method-section > .sabre-method-inner, .sabre-journey-section > div, .sabre-verticals-section > div, .sabre-culture-section > div:not(.sabre-culture-media):not(.sabre-culture-edge) { position:relative; z-index:2; }
+  .sabre-method-section { color:#fff; }
+  .sabre-method-section .sabre-method-inner::before { content:""; position:absolute; inset:-84px -72px -120px; z-index:-1; pointer-events:none; opacity:.34; background-image:linear-gradient(90deg, transparent 0 12%, rgba(128,144,144,.22) 12% 12.07%, transparent 12.07% 100%), linear-gradient(0deg, transparent 0 38%, rgba(128,144,144,.18) 38% 38.08%, transparent 38.08% 100%), radial-gradient(circle at 11% 8%, transparent 0 42px, rgba(197,167,92,.22) 43px 44px, transparent 45px), radial-gradient(circle at 76% 12%, transparent 0 10px, rgba(197,167,92,.34) 11px 12px, transparent 13px), radial-gradient(circle at 88% 58%, transparent 0 7px, rgba(197,167,92,.30) 8px 9px, transparent 10px); }
+  .sabre-method-ruler { position:absolute; z-index:1; pointer-events:none; opacity:.22; }
+  .sabre-method-ruler-left { left:42px; top:92px; width:128px; height:520px; background-image:radial-gradient(circle at 64px 64px, transparent 0 47px, rgba(214,219,213,.35) 48px 49px, transparent 50px), linear-gradient(90deg, rgba(214,219,213,.25), transparent 1px), linear-gradient(0deg, rgba(214,219,213,.16) 0 1px, transparent 1px 18px); }
+  .sabre-method-ruler-right { right:38px; top:122px; width:92px; height:520px; background-image:linear-gradient(90deg, rgba(214,219,213,.30), transparent 1px), repeating-linear-gradient(0deg, rgba(214,219,213,.28) 0 1px, transparent 1px 42px); }
+  .sabre-method-reticle { position:absolute; z-index:1; pointer-events:none; width:24px; height:24px; border:1px solid rgba(205,176,101,.42); border-radius:50%; box-shadow:0 0 0 1px rgba(0,0,0,.45), 0 0 24px rgba(237,207,103,.10); }
+  .sabre-method-reticle::before, .sabre-method-reticle::after { content:""; position:absolute; background:rgba(205,176,101,.30); }
+  .sabre-method-reticle::before { left:50%; top:-42px; bottom:-42px; width:1px; }
+  .sabre-method-reticle::after { top:50%; left:-42px; right:-42px; height:1px; }
+  .sabre-method-reticle-a { left:60%; top:148px; }
+  .sabre-method-reticle-b { left:24%; bottom:92px; }
+  .sabre-method-reticle-c { right:14%; bottom:142px; }
+  .sabre-method-card-grid::before { content:""; position:absolute; left:0; right:0; top:0; height:1px; background:linear-gradient(90deg, transparent, rgba(237,207,103,.95) 9%, rgba(237,207,103,.72) 91%, transparent); box-shadow:0 0 18px rgba(237,207,103,.34); z-index:3; }
+  .sabre-method-rail { position:absolute; left:0; right:0; top:0; height:1px; z-index:4; pointer-events:none; }
+  .sabre-method-card { position:relative; overflow:hidden; isolation:isolate; border:1px solid rgba(214,187,112,.42); border-top-color:rgba(237,207,103,.86); background:linear-gradient(145deg, rgba(34,34,31,.82), rgba(16,17,16,.90)); box-shadow:inset 0 1px 0 rgba(255,255,255,.08), inset 0 -60px 120px rgba(0,0,0,.26), 0 22px 70px rgba(0,0,0,.28); }
+  .sabre-method-card::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.82; background-image:radial-gradient(circle at 86% 18%, rgba(237,207,103,.12), transparent 22%), repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 38px), repeating-linear-gradient(90deg, rgba(255,255,255,.033) 0 1px, transparent 1px 38px), repeating-linear-gradient(107deg, rgba(255,255,255,.026) 0 1px, transparent 1px 12px); }
+  .sabre-method-card::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.70; background:radial-gradient(circle at 30% 30%, rgba(69,181,188,.22), transparent 30%), linear-gradient(135deg, rgba(255,255,255,.05), transparent 42%); }
+  .sabre-method-card:nth-child(3)::after { background:radial-gradient(circle at 76% 24%, rgba(237,207,103,.18), transparent 31%), linear-gradient(135deg, transparent, rgba(129,94,45,.18)); }
+  .sabre-method-card:nth-child(4)::after { background:radial-gradient(circle at 78% 32%, rgba(190,200,196,.16), transparent 32%), repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 1px, transparent 1px 46px), repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 46px); }
+  .sabre-method-card > * { position:relative; z-index:1; }
+  .sabre-method-node { position:absolute; top:-10px; left:50%; width:20px; height:20px; border-radius:50%; transform:translateX(-50%); border:3px solid rgba(237,207,103,.88); background:#161511; box-shadow:0 0 0 1px rgba(0,0,0,.7), 0 0 20px rgba(237,207,103,.38); z-index:5; }
+  .sabre-method-node::after { content:""; position:absolute; inset:4px; border-radius:50%; background:rgba(237,207,103,.55); }
+  .sabre-method-num { text-shadow:0 0 18px rgba(237,207,103,.16); }
+  @media (max-width:1024px) { .sabre-method-copy { margin-left:0 !important; } .sabre-method-section { padding-top:96px !important; } .sabre-method-ruler, .sabre-method-reticle { display:none; } }
+  .sabre-journey-section { position:relative; overflow:hidden; isolation:isolate; }
+  .sabre-journey-section::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.86; background-image:radial-gradient(circle at 12% 14%, rgba(255,255,255,.66), transparent 22%), radial-gradient(circle at 86% 8%, rgba(237,207,103,.18), transparent 26%), repeating-linear-gradient(0deg, rgba(46,37,26,.034) 0 1px, transparent 1px 7px), repeating-linear-gradient(90deg, rgba(46,37,26,.025) 0 1px, transparent 1px 8px), linear-gradient(118deg, transparent 0 58%, rgba(11,64,80,.12) 58% 58.12%, transparent 58.12%), linear-gradient(29deg, transparent 0 76%, rgba(46,37,26,.12) 76% 76.1%, transparent 76.1%); }
+  .sabre-journey-section::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.48; background-image:radial-gradient(circle at 83% 49%, transparent 0 8px, rgba(46,37,26,.22) 9px 10px, transparent 11px), radial-gradient(circle at 92% 42%, transparent 0 4px, rgba(46,37,26,.18) 5px 6px, transparent 7px), linear-gradient(90deg, transparent 0 74%, rgba(46,37,26,.16) 74% 74.08%, transparent 74.08%), linear-gradient(0deg, transparent 0 56%, rgba(46,37,26,.12) 56% 56.08%, transparent 56.08%); }
+  .sabre-journey-shell { position:relative; z-index:2; }
+  .sabre-journey-orb { position:absolute; z-index:1; pointer-events:none; border:1px solid rgba(46,37,26,.32); border-radius:50%; opacity:.55; }
+  .sabre-journey-orb::before, .sabre-journey-orb::after { content:""; position:absolute; background:rgba(46,37,26,.18); }
+  .sabre-journey-orb::before { left:50%; top:-40px; bottom:-40px; width:1px; }
+  .sabre-journey-orb::after { top:50%; left:-40px; right:-40px; height:1px; }
+  .sabre-journey-orb-a { width:24px; height:24px; left:55%; top:12px; animation:journeyNodeFloat 8s ease-in-out infinite; }
+  .sabre-journey-orb-b { width:18px; height:18px; left:6%; bottom:24%; animation:journeyNodeFloat 10s ease-in-out infinite reverse; }
+  .sabre-curve-panel { border:1px solid rgba(202,170,99,.48); box-shadow:0 24px 62px rgba(23,16,8,.22), inset 0 1px 0 rgba(255,255,255,.08), inset 0 -70px 120px rgba(0,0,0,.32); }
+  .sabre-curve-panel::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.82; background-image:radial-gradient(circle at 76% 23%, rgba(237,207,103,.14), transparent 24%), radial-gradient(circle at 18% 82%, rgba(77,186,190,.13), transparent 26%), repeating-linear-gradient(0deg, rgba(255,255,255,.045) 0 1px, transparent 1px 42px), repeating-linear-gradient(90deg, rgba(255,255,255,.030) 0 1px, transparent 1px 42px), repeating-linear-gradient(105deg, rgba(255,255,255,.028) 0 1px, transparent 1px 13px); }
+  .sabre-curve-panel::after { content:""; position:absolute; left:42px; right:42px; bottom:34px; height:88px; z-index:1; pointer-events:none; opacity:.44; background-image:linear-gradient(90deg, rgba(237,207,103,.34), transparent 1px), linear-gradient(0deg, rgba(237,207,103,.26) 0 1px, transparent 1px 18px), linear-gradient(135deg, transparent 0 36%, rgba(237,207,103,.30) 36% 36.2%, transparent 36.2%); }
+  .sabre-curve-baseline { position:relative; z-index:3; height:1px; margin-top:2px; background:linear-gradient(90deg, rgba(237,207,103,.10), rgba(237,207,103,.50), rgba(77,186,190,.30)); box-shadow:0 0 18px rgba(77,186,190,.28); }
+  .sabre-curve-bar { position:relative; box-shadow:inset 0 1px 0 rgba(255,255,255,.35), 0 0 18px rgba(237,207,103,.16); overflow:hidden; }
+  .sabre-curve-bar::before { content:""; position:absolute; inset:0; background:linear-gradient(90deg, rgba(255,255,255,.18), transparent 24%, rgba(0,0,0,.14)); opacity:.55; }
+  .sabre-curve-bar::after { content:""; position:absolute; top:-16px; left:50%; width:1px; height:28px; background:rgba(237,207,103,.78); box-shadow:0 0 12px rgba(237,207,103,.9); animation:journeySpark 3.8s ease-in-out infinite; }
+  .sabre-curve-bar-wrap:nth-child(2) .sabre-curve-bar::after { animation-delay:.45s; }
+  .sabre-curve-bar-wrap:nth-child(3) .sabre-curve-bar::after { animation-delay:.9s; }
+  .sabre-curve-bar-wrap:nth-child(4) .sabre-curve-bar::after { animation-delay:1.35s; }
+  .sabre-curve-bar-wrap:nth-child(5) .sabre-curve-bar::after { animation-delay:1.8s; }
+  .sabre-curve-corner { position:absolute; z-index:3; pointer-events:none; width:44px; height:44px; border-color:rgba(237,207,103,.36); }
+  .sabre-curve-corner-a { left:20px; bottom:20px; border-left:1px solid; border-bottom:1px solid; }
+  .sabre-curve-corner-b { right:20px; top:20px; border-right:1px solid; border-top:1px solid; }
+  .sabre-stats-draft { position:relative; border:1px solid rgba(46,37,26,.32); background:rgba(246,239,227,.34); box-shadow:0 16px 40px rgba(84,63,35,.10), inset 0 1px 0 rgba(255,255,255,.42); }
+  .sabre-stats-draft::before { content:""; position:absolute; inset:0; pointer-events:none; background-image:linear-gradient(90deg, transparent 0 49.85%, rgba(46,37,26,.30) 49.85% 50.05%, transparent 50.05%), linear-gradient(0deg, transparent 0 49.85%, rgba(46,37,26,.30) 49.85% 50.05%, transparent 50.05%); }
+  .sabre-stat-cell { position:relative; background:rgba(245,237,223,.36); overflow:hidden; }
+  .sabre-stat-cell::before { content:""; position:absolute; inset:0; opacity:.34; pointer-events:none; background-image:radial-gradient(circle at 82% 76%, rgba(237,207,103,.16), transparent 22%), repeating-linear-gradient(0deg, rgba(46,37,26,.030) 0 1px, transparent 1px 7px), repeating-linear-gradient(90deg, rgba(46,37,26,.020) 0 1px, transparent 1px 8px); }
+  .sabre-stat-cell > * { position:relative; z-index:1; }
+  .sabre-stat-dot { position:absolute; left:26px; bottom:22px; width:4px; height:4px; border-radius:50%; background:#0b4050; box-shadow:0 0 9px rgba(11,64,80,.55); }
+  .sabre-stat-cell:nth-child(odd) .sabre-stat-dot { background:#C69D5B; box-shadow:0 0 10px rgba(198,157,91,.62); }
+  .sabre-journey-link { position:relative; }
+  .sabre-journey-link::after { content:""; position:absolute; right:-14px; bottom:-3px; width:7px; height:7px; border:1px solid #0b4050; border-radius:50%; background:#eee4d3; }
+  @keyframes journeySpark { 0%,100% { opacity:.36; transform:translateY(0); } 45% { opacity:1; transform:translateY(-4px); } }
+  @keyframes journeyNodeFloat { 0%,100% { transform:translate3d(0,0,0); opacity:.42; } 50% { transform:translate3d(0,8px,0); opacity:.72; } }
+  @media (max-width:960px) { .sabre-journey-shell { gap:42px !important; } .sabre-curve-panel { min-height:360px !important; } }
+  .sabre-vertical-card { position:relative; overflow:hidden; isolation:isolate; }
+  .sabre-vertical-card::before { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:.30; background-image:linear-gradient(135deg, rgba(237,207,103,.12), transparent 42%), repeating-linear-gradient(90deg, rgba(255,255,255,.026) 0 1px, transparent 1px 9px); }
+  .sabre-vertical-card > * { position:relative; z-index:1; }
+  @keyframes sabreScan { 0% { background-position:-40% 0,0 0,0 0,0 0; opacity:.28; } 50% { background-position:60% 0,0 0,0 0,0 0; opacity:.48; } 100% { background-position:120% 0,0 0,0 0,0 0; opacity:.32; } }
+  @keyframes sabreArchiveGlow { 0%,100% { opacity:.28; filter:brightness(.9); } 50% { opacity:.48; filter:brightness(1.18); } }
+  @keyframes sabreGridLock { 0% { transform:translateY(8px); opacity:.28; } 50% { transform:translateY(0); opacity:.52; } 100% { transform:translateY(8px); opacity:.32; } }
+  @keyframes sabreBarClimbSheen { 0% { transform:translateY(38%); opacity:.22; } 50% { transform:translateY(-12%); opacity:.52; } 100% { transform:translateY(-44%); opacity:.20; } }
+  @keyframes sabreCurveGuideBreath { 0%,100% { opacity:.22; } 50% { opacity:.42; } }
+  @keyframes sabreFitnessScan { 0% { transform:translateX(-26%); opacity:.32; } 48% { transform:translateX(18%); opacity:.78; } 100% { transform:translateX(28%); opacity:.42; } }
+  @keyframes sabreHospitalityFlow { 0%,100% { transform:scale(.96); filter:brightness(.9); } 50% { transform:scale(1.02); filter:brightness(1.22); } }
+  @keyframes sabreBeautyWash { 0% { background-position:0 0,0 0,0 0,0 0; transform:translateX(-18%); } 55% { background-position:82% 0,0 0,0 0,0 0; transform:translateX(10%); } 100% { background-position:120% 0,0 0,0 0,0 0; transform:translateX(18%); } }
+  @keyframes sabreMedicalLock { 0% { transform:translateY(8px); opacity:.34; } 50% { transform:translateY(0); opacity:.74; } 100% { transform:translateY(8px); opacity:.44; } }
+  .sabre-method-card { transition:transform 520ms cubic-bezier(.16,1,.3,1), box-shadow 520ms ease, border-color 520ms ease, background 520ms ease; }
+  .sabre-method-card:hover { transform:translateY(-6px) !important; border-color:rgba(237,207,103,.58); box-shadow:inset 0 1px 0 rgba(255,255,255,.08), 0 0 34px rgba(237,207,103,.10), 0 28px 70px rgba(0,0,0,.38); }
+  .sabre-method-card-grid .sabre-method-card:nth-child(2):hover::before { background:linear-gradient(90deg, transparent 0 18%, rgba(54,215,222,.18) 22%, transparent 30%), radial-gradient(circle at 24% 68%, rgba(45,211,220,.24) 0 2px, transparent 3px), radial-gradient(circle at 52% 42%, rgba(45,211,220,.20) 0 2px, transparent 3px), repeating-linear-gradient(90deg, rgba(255,255,255,.026) 0 1px, transparent 1px 9px); background-size:220% 100%,100% 100%,100% 100%,100% 100%; animation:sabreScan 2.8s cubic-bezier(.16,1,.3,1) infinite; }
+  .sabre-method-card-grid .sabre-method-card:nth-child(3):hover::before { background:linear-gradient(28deg, transparent 0 36%, rgba(237,207,103,.18) 36.4% 36.9%, transparent 37.3%), linear-gradient(150deg, transparent 0 48%, rgba(237,207,103,.13) 48.4% 48.9%, transparent 49.3%), repeating-linear-gradient(0deg, rgba(237,207,103,.04) 0 1px, transparent 1px 28px); animation:sabreArchiveGlow 3.6s ease-in-out infinite; }
+  .sabre-method-card-grid .sabre-method-card:nth-child(4):hover::before { background:linear-gradient(90deg, rgba(214,219,213,.10) 0 1px, transparent 1px), linear-gradient(0deg, rgba(214,219,213,.08) 0 1px, transparent 1px), linear-gradient(90deg, transparent 0 22%, rgba(214,219,213,.16) 22% 22.5%, transparent 22.5%), linear-gradient(0deg, transparent 0 64%, rgba(214,219,213,.13) 64% 64.6%, transparent 64.6%); background-size:42px 42px,42px 42px,100% 100%,100% 100%; animation:sabreGridLock 3.4s steps(4,end) infinite; }
+  .sabre-curve-bar { background:linear-gradient(180deg, #EDCF67 0%, #c9a24d 36%, #0b5663 100%) !important; }
+  .sabre-curve-bar::before { inset:-40% 0; background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.28) 42%, transparent 70%); animation:sabreBarClimbSheen 4.8s ease-in-out infinite; }
+  .sabre-curve-bar::after { display:none !important; }
+  .sabre-curve-bars .sabre-curve-bar { height:var(--bar-h, 0%); animation:sabreCurveRecalc 7.2s cubic-bezier(.16,1,.3,1) infinite; transform-origin:bottom center; }
+  .sabre-curve-bar-wrap span { animation:sabreCurveLabelRecalc 7.2s cubic-bezier(.16,1,.3,1) infinite; }
+  .sabre-curve-bar-wrap:nth-child(2) .sabre-curve-bar, .sabre-curve-bar-wrap:nth-child(2) span { animation-delay:.32s; }
+  .sabre-curve-bar-wrap:nth-child(3) .sabre-curve-bar, .sabre-curve-bar-wrap:nth-child(3) span { animation-delay:.68s; }
+  .sabre-curve-bar-wrap:nth-child(4) .sabre-curve-bar, .sabre-curve-bar-wrap:nth-child(4) span { animation-delay:1.04s; }
+  .sabre-curve-bar-wrap:nth-child(5) .sabre-curve-bar, .sabre-curve-bar-wrap:nth-child(5) span { animation-delay:1.40s; }
+  .sabre-curve-bar-wrap:nth-child(6) .sabre-curve-bar, .sabre-curve-bar-wrap:nth-child(6) span { animation-delay:1.76s; }
+  .sabre-curve-line { position:absolute; left:56px; right:56px; top:126px; height:232px; z-index:1; opacity:.78; mix-blend-mode:screen; pointer-events:none; }
+  .sabre-curve-seg { position:absolute; height:1.5px; border-radius:999px; background:linear-gradient(90deg, rgba(33,140,146,.05), rgba(198,164,70,.30), rgba(245,226,138,.13)); box-shadow:0 0 10px rgba(229,195,82,.10); opacity:.34; animation:sabreCurveGuideBreath 6.2s ease-in-out infinite; }
+  .sabre-curve-seg-1 { left:2%; top:82%; width:20%; transform:rotate(-5deg); }
+  .sabre-curve-seg-2 { left:20%; top:75%; width:19%; transform:rotate(-12deg); animation-delay:-.9s; }
+  .sabre-curve-seg-3 { left:37%; top:60%; width:20%; transform:rotate(-19deg); animation-delay:-1.8s; }
+  .sabre-curve-seg-4 { left:54%; top:36%; width:19%; transform:rotate(-30deg); animation-delay:-2.7s; }
+  .sabre-curve-seg-5 { left:68%; top:12%; width:29%; transform:rotate(-38deg); animation-delay:-3.6s; }
+  .sabre-vertical-card { box-shadow:inset 0 0 0 1px rgba(255,255,255,.018), 0 18px 42px rgba(0,0,0,.18); transition:transform 520ms cubic-bezier(.16,1,.3,1), opacity 420ms ease, background 520ms ease, box-shadow 520ms ease, border-color 520ms ease; }
+  .sabre-vertical-card::after { content:""; position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0; mix-blend-mode:screen; transition:opacity 520ms cubic-bezier(.16,1,.3,1), transform 760ms cubic-bezier(.16,1,.3,1), filter 520ms ease; }
+  .sabre-vertical-card:hover { transform:translateY(-7px) !important; background:rgba(22,23,25,.66) !important; box-shadow:inset 0 0 0 1px rgba(255,255,255,.055), 0 28px 70px rgba(0,0,0,.36) !important; }
+  .sabre-vertical-card:hover::before { opacity:.45; }
+  .sabre-vertical-card:hover::after { opacity:.72; }
+  .sabre-vertical-card:hover h3 { text-shadow:0 0 22px rgba(255,255,255,.12); }
+  div:has(> .sabre-vertical-card:hover) > .sabre-vertical-card:not(:hover) { opacity:.72 !important; }
+  .sabre-vertical-card:nth-child(1):hover { border-left-color:#1ca8b3 !important; box-shadow:inset 0 0 0 1px rgba(42,184,190,.13), -18px 0 46px rgba(0,120,135,.18), 0 28px 70px rgba(0,0,0,.36) !important; }
+  .sabre-vertical-card:nth-child(1)::after { background:linear-gradient(90deg, transparent 0 18%, rgba(54,215,222,.20) 22%, transparent 28%), repeating-linear-gradient(0deg, transparent 0 20px, rgba(48,190,196,.13) 21px 22px, transparent 23px 46px), radial-gradient(circle at 20% 68%, rgba(45,211,220,.24) 0 2px, transparent 3px), radial-gradient(circle at 42% 44%, rgba(45,211,220,.22) 0 2px, transparent 3px), radial-gradient(circle at 68% 58%, rgba(45,211,220,.20) 0 2px, transparent 3px); background-size:220% 100%,100% 100%,100% 100%,100% 100%,100% 100%; transform:translateX(-24%); }
+  .sabre-vertical-card:nth-child(1):hover::after { animation:sabreFitnessScan 2.8s cubic-bezier(.16,1,.3,1) infinite; }
+  .sabre-vertical-card:nth-child(2):hover { border-left-color:#edcf67 !important; box-shadow:inset 0 0 0 1px rgba(237,207,103,.14), -16px 0 42px rgba(237,207,103,.15), 0 28px 70px rgba(0,0,0,.36) !important; }
+  .sabre-vertical-card:nth-child(2)::after { background:radial-gradient(circle at 24% 72%, rgba(237,207,103,.28) 0 2px, transparent 3px), radial-gradient(circle at 62% 42%, rgba(237,207,103,.20) 0 2px, transparent 3px), radial-gradient(circle at 82% 62%, rgba(237,207,103,.22) 0 2px, transparent 3px), linear-gradient(28deg, transparent 0 36%, rgba(237,207,103,.22) 36.4% 36.9%, transparent 37.3%), linear-gradient(150deg, transparent 0 48%, rgba(237,207,103,.16) 48.4% 48.9%, transparent 49.3%), radial-gradient(circle at 50% 58%, rgba(237,207,103,.13), transparent 34%); transform:scale(.96); }
+  .sabre-vertical-card:nth-child(2):hover::after { animation:sabreHospitalityFlow 3.6s ease-in-out infinite; }
+  .sabre-vertical-card:nth-child(3):hover { border-left-color:#bfddd5 !important; box-shadow:inset 0 0 0 1px rgba(191,221,213,.16), -18px 0 46px rgba(178,230,218,.16), 0 28px 70px rgba(0,0,0,.36) !important; }
+  .sabre-vertical-card:nth-child(3)::after { background:linear-gradient(100deg, transparent 0 28%, rgba(191,221,213,.20) 38%, transparent 49%), radial-gradient(ellipse at 26% 52%, transparent 0 16%, rgba(191,221,213,.20) 16.4% 16.9%, transparent 17.5%), radial-gradient(ellipse at 78% 30%, transparent 0 10%, rgba(191,221,213,.14) 10.5% 11%, transparent 11.6%), repeating-linear-gradient(90deg, rgba(191,221,213,.045) 0 1px, transparent 1px 18px); background-size:220% 100%,100% 100%,100% 100%,100% 100%; transform:translateX(-18%); }
+  .sabre-vertical-card:nth-child(3):hover::after { animation:sabreBeautyWash 3.8s cubic-bezier(.16,1,.3,1) infinite; }
+  .sabre-vertical-card:nth-child(4):hover { border-left-color:#7b8588 !important; box-shadow:inset 0 0 0 1px rgba(220,224,220,.10), -14px 0 38px rgba(178,190,190,.10), 0 28px 70px rgba(0,0,0,.36) !important; }
+  .sabre-vertical-card:nth-child(4)::after { background:linear-gradient(90deg, rgba(214,219,213,.10) 0 1px, transparent 1px), linear-gradient(0deg, rgba(214,219,213,.08) 0 1px, transparent 1px), linear-gradient(90deg, transparent 0 22%, rgba(214,219,213,.16) 22% 22.5%, transparent 22.5% 100%), linear-gradient(0deg, transparent 0 64%, rgba(214,219,213,.13) 64% 64.6%, transparent 64.6% 100%), radial-gradient(circle at 72% 36%, transparent 0 18px, rgba(214,219,213,.22) 19px 20px, transparent 21px); background-size:42px 42px,42px 42px,100% 100%,100% 100%,100% 100%; transform:translateY(8px); }
+  .sabre-vertical-card:nth-child(4):hover::after { animation:sabreMedicalLock 3.4s steps(4,end) infinite; }
+  .sabre-culture-section { background:linear-gradient(180deg, #040606 0%, #062027 58%, #062f39 100%) !important; }
+  .sabre-culture-section::before { z-index:1; opacity:.22; background-image:repeating-linear-gradient(105deg, rgba(255,255,255,.04) 0 1px, transparent 1px 18px), linear-gradient(90deg, transparent 0 50%, rgba(237,207,103,.18) 50% 50.08%, transparent 50.08%) !important; }
+  .sabre-culture-section::after { z-index:1; opacity:.54; background-image:radial-gradient(circle at 34% 46%, rgba(14,124,133,.16), transparent 30%), radial-gradient(circle at 62% 38%, rgba(237,207,103,.10), transparent 24%), linear-gradient(180deg, rgba(2,2,3,.46) 0%, rgba(2,2,3,.10) 44%, rgba(2,38,47,.28) 100%), radial-gradient(ellipse at 50% 50%, transparent 0 48%, rgba(0,0,0,.38) 100%) !important; }
+  .sabre-culture-media { position:absolute !important; inset:0; z-index:0 !important; pointer-events:none; overflow:hidden; }
+  .sabre-culture-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 50%; opacity:.94; filter:saturate(1.02) contrast(1.02) brightness(1.08); mix-blend-mode:screen; }
+  .sabre-culture-edge { position:absolute !important; left:0; right:0; height:168px; z-index:1 !important; pointer-events:none; overflow:hidden; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+  .sabre-culture-edge::before { content:""; position:absolute; inset:0; }
+  .sabre-culture-edge--top { top:-1px; -webkit-mask-image:linear-gradient(180deg, #000 0%, rgba(0,0,0,.82) 36%, transparent 100%); mask-image:linear-gradient(180deg, #000 0%, rgba(0,0,0,.82) 36%, transparent 100%); }
+  .sabre-culture-edge--top::before { background:linear-gradient(180deg, rgba(2,2,3,.92) 0%, rgba(2,2,3,.54) 50%, rgba(2,2,3,0) 100%); }
+  .sabre-cta-section { position:relative; overflow:hidden; background:radial-gradient(circle at 50% 55%, rgba(237,207,103,.16), transparent 26%), radial-gradient(circle at 48% 35%, rgba(14,124,133,.28), transparent 38%), linear-gradient(135deg, #061012 0%, #07272d 46%, #030606 100%) !important; }
+  .sabre-cta-section::before { content:""; position:absolute; inset:0; opacity:.28; pointer-events:none; background-image:linear-gradient(28deg, transparent 0 44%, rgba(237,207,103,.16) 44.1% 44.22%, transparent 44.35%), linear-gradient(152deg, transparent 0 58%, rgba(14,124,133,.18) 58.1% 58.25%, transparent 58.4%), repeating-linear-gradient(90deg, rgba(255,255,255,.026) 0 1px, transparent 1px 14px); }
+  .sabre-cta-section > div { position:relative; z-index:1; }
+  .sabre-cta { position:relative; isolation:isolate; overflow:hidden; background:#022f3b !important; }
+  .sabre-cta__media { position:absolute !important; inset:0; z-index:0 !important; overflow:hidden; pointer-events:none; background:#022f3b; }
+  .sabre-cta__video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 70%; pointer-events:none; }
+  .sabre-cta__video--idle { z-index:0; opacity:1; }
+  .sabre-cta__video--activation { z-index:1; opacity:0; transition:opacity 180ms cubic-bezier(0.4,0,0.2,1); will-change:opacity; }
+  .sabre-cta__video--activation.is-active { opacity:1; }
+  .sabre-cta__veil { position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(180deg, rgba(2,20,25,0.08) 0%, rgba(2,31,39,0.14) 55%, rgba(2,20,25,0.24) 100%); }
+  .sabre-cta__content { position:relative; z-index:3 !important; }
+  .sabre-button-primary { background:linear-gradient(180deg, #f2d976, #c9a24d) !important; color:#080807 !important; box-shadow:inset 0 1px 0 rgba(255,255,255,.38), 0 12px 30px rgba(237,207,103,.22); }
+  .sabre-button-primary:hover { box-shadow:inset 0 1px 0 rgba(255,255,255,.45), 0 0 28px rgba(237,207,103,.34); }
+  .sabre-button-secondary { background:rgba(5,8,9,.30) !important; border:1px solid rgba(191,221,213,.45) !important; color:#f6f4ee !important; backdrop-filter:blur(8px); }
+  .sabre-button-secondary:hover { border-color:rgba(237,207,103,.52) !important; box-shadow:0 0 24px rgba(14,124,133,.18); }
+  .sabre-footer { position:relative; overflow:hidden; background:radial-gradient(circle at 72% 8%, rgba(237,207,103,.10), transparent 24%), radial-gradient(circle at 88% 45%, rgba(14,124,133,.14), transparent 34%), linear-gradient(135deg, #030404, #080a09 60%, #020203) !important; border-top:1px solid rgba(237,207,103,.36) !important; }
+  .sabre-footer-logo { display:block; width:clamp(150px,14vw,220px); height:38px; object-fit:contain; object-position:left center; margin:0 0 20px; filter:drop-shadow(0 0 14px rgba(255,255,255,.08)); }
+  .sabre-footer a { position:relative; color:rgba(246,244,238,.68) !important; opacity:1 !important; transition:color 260ms ease; }
+  .sabre-footer a::after { content:""; position:absolute; left:0; right:100%; bottom:-4px; height:1px; background:rgba(237,207,103,.68); transition:right 360ms cubic-bezier(.16,1,.3,1); }
+  .sabre-footer a:hover { color:#f6f4ee !important; }
+  .sabre-footer a:hover::after { right:0; }
+  @media (max-width:1024px) {
+    .sabre-wwd-upper .sabre-panel-video { object-position:72% 50%; }
+    .sabre-wwd-brands .sabre-panel-video { object-position:72% 55%; }
+    .sabre-wwd-landlords .sabre-panel-video { object-position:72% 58%; }
+    .sabre-wwd-brands .sabre-panel-scrim { background:linear-gradient(180deg, rgba(8,8,8,0.92) 0%, rgba(8,8,8,0.78) 58%, rgba(8,8,8,0.28) 100%); }
+    .sabre-wwd-landlords .sabre-panel-scrim { background:linear-gradient(180deg, rgba(220,225,226,0.94) 0%, rgba(220,225,226,0.80) 58%, rgba(220,225,226,0.28) 100%); }
+  }
+  @media (max-width:760px) { .sabre-cta__video { object-position:50% 70%; } }
+  @media (max-width:767px), (hover:none), (pointer:coarse) {
+    header#hero { height:auto !important; min-height:100svh !important; }
+    #heroStage { position:relative !important; height:auto !important; min-height:100svh !important; padding:132px 0 76px !important; align-items:flex-end !important; }
+    #heroVideo { opacity:.76 !important; object-position:62% 50% !important; transform:none !important; filter:none !important; }
+    #heroShade { opacity:1 !important; background:linear-gradient(90deg, rgba(2,2,3,.72), rgba(2,2,3,.32) 56%, rgba(2,2,3,.08)) !important; }
+    #heroVignette { opacity:1 !important; background:radial-gradient(ellipse at 58% 44%, transparent 0 44%, rgba(2,2,3,.44) 100%) !important; }
+    #heroCopy { padding:0 24px !important; }
+    #heroCopy::before { left:0; top:50%; width:100%; height:72%; transform:translate3d(0,-50%,0); opacity:.92 !important; background:radial-gradient(ellipse at 30% 48%, rgba(2,2,3,.66) 0%, rgba(2,2,3,.48) 42%, rgba(2,2,3,0) 78%) !important; }
+    #heroTitle { font-size:clamp(34px,11.5vw,50px) !important; line-height:1.05 !important; margin-bottom:24px !important; }
+    #heroBody { font-size:15.5px !important; line-height:1.58 !important; max-width:95% !important; margin-bottom:28px !important; color:rgba(245,247,248,.92) !important; }
+    #heroActions { gap:12px !important; width:100% !important; }
+    #heroActions a { width:100%; justify-content:center; padding:15px 18px !important; }
+    #brands { height:auto !important; min-height:0 !important; }
+    #brands .sabre-panel-content > * { opacity:1 !important; transform:none !important; filter:none !important; clip-path:none !important; }
+    #brands .sabre-scrub-canvas { display:none !important; }
+    #brands .sabre-panel-video { opacity:.62 !important; transform:none !important; }
+    #contact.sabre-cta { min-height:72svh; padding:96px 0 !important; }
+    .sabre-cta__content { padding:0 24px !important; }
+    .sabre-cta__video--activation { display:none !important; }
+    .sabre-cta__video--idle { opacity:.62 !important; }
+  }
+  @media (prefers-reduced-motion: reduce) { .sabre-panel-video, .sabre-culture-video { display:none; } .sabre-cta__video { display:none; } .sabre-cta__media { background:linear-gradient(rgba(2,47,59,0.12), rgba(2,47,59,0.12)), url("media/cta/sabre-cta-poster.png") center 70% / cover no-repeat; } .sabre-vertical-card, .sabre-vertical-card::before, .sabre-vertical-card::after, .sabre-method-card, .sabre-method-card::before, .sabre-curve-bar, .sabre-curve-bar::before, .sabre-curve-bar-wrap span, .sabre-curve-seg { animation:none !important; transition-duration:.001ms !important; } }
+</style>
+<nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:28px 48px; opacity:0; transition:background 400ms cubic-bezier(0.4,0,0.2,1), padding 400ms cubic-bezier(0.4,0,0.2,1), opacity 900ms cubic-bezier(0.16,1,0.3,1);" ref="{{ navRef }}">
+    <a href="#hero" id="navLogo" aria-label="SABRE home" style="display:flex; align-items:center; width:clamp(142px,13vw,210px); height:34px; padding-left:0; transition:filter 300ms cubic-bezier(0.4,0,0.2,1);"><img src="media/sabre-white-logo-transparent.png" alt="SABRE" style="display:block; width:100%; height:100%; object-fit:contain; object-position:left center; filter:drop-shadow(0 0 12px rgba(255,255,255,0.08));"></a>
+    <div style="display:flex; align-items:center; gap:36px; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.18em; text-transform:uppercase;">
+      <a href="#brands" data-navlink="" style="position:relative; opacity:1; color:#fff; transition:opacity 200ms;">For Brands</a>
+      <a href="#landlords" data-navlink="" style="position:relative; opacity:1; color:#fff; transition:opacity 200ms;">For Landlords</a>
+      <a href="#culture" data-navlink="" style="position:relative; opacity:1; color:#fff; transition:opacity 200ms;">About</a>
+      <a href="#contact" data-navlink="" style="position:relative; opacity:1; color:#fff; transition:opacity 200ms;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============ SECTION 1: HERO ============ -->
+  <header id="hero" data-screen-label="Hero" style="position:relative; width:100%; height:420vh; min-height:calc(640px + 320vh); overflow:visible; display:block; background:#020203;">
+    <div id="heroStage" style="position:absolute; top:0; left:0; width:100%; height:100vh; min-height:640px; overflow:hidden; display:flex; align-items:center;">
+    <video id="heroVideo" muted="" playsinline="" preload="auto" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0; opacity:1; filter:none; transition:opacity 800ms cubic-bezier(0.16,1,0.3,1); background:#020203;">
+      <source src="hero-scroll.mp4" type="video/mp4">
+    </video>
+    <!-- depth gradient: darker top-left -> lighter bottom-right, ~60% -->
+    <div id="heroShade" style="position:absolute; inset:0; z-index:1; background:transparent; opacity:0;"></div>
+    <!-- vignette -->
+    <div id="heroVignette" style="position:absolute; inset:0; z-index:1; pointer-events:none; background:transparent; opacity:0;"></div>
+    <!-- film grain -->
+    <div id="heroGrain" style="position:absolute; inset:-20%; z-index:2; pointer-events:none; opacity:0.045; mix-blend-mode:overlay; animation:grainShift 1.1s steps(6) infinite; background-image:url('data:image/svg+xml;utf8,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22160%22 height=%22160%22&gt;&lt;filter id=%22n%22&gt;&lt;feTurbulence type=%22fractalNoise%22 sc-camel-base-frequency=%220.9%22 sc-camel-num-octaves=%222%22 sc-camel-stitch-tiles=%22stitch%22/&gt;&lt;/filter&gt;&lt;rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/&gt;&lt;/svg&gt;'); background-size:180px 180px;"></div>
+    <!-- Location pins + network lines -->
+    <svg id="pinLines" sc-camel-view-box="0 0 100 100" sc-camel-preserve-aspect-ratio="none" style="display:none; position:absolute; inset:0; z-index:1; width:100%; height:100%; pointer-events:none;">
+      <sc-for list="{{ pinLines }}" as="ln" hint-placeholder-count="8">
+        <line data-line="" data-delay="{{ ln.delay }}" x1="{{ ln.x1 }}" y1="{{ ln.y1 }}" x2="{{ ln.x2 }}" y2="{{ ln.y2 }}" stroke="#BFDDD5" stroke-width="0.12" stroke-opacity="0.25" vector-effect="non-scaling-stroke" style="opacity:0;"></line>
+      </sc-for>
+    </svg>
+    <div id="heroPins" style="display:none; position:absolute; inset:0; z-index:1; pointer-events:none;">
+      <sc-for list="{{ pins }}" as="pin" hint-placeholder-count="10">
+        <div data-pin="" data-delay="{{ pin.delay }}" style="position:absolute; top:{{ pin.top }}; left:{{ pin.left }}; transform:translate(-50%,-100%) scale(0); transform-origin:bottom center; opacity:0; transition:opacity 500ms cubic-bezier(0.34,1.56,0.64,1), transform 500ms cubic-bezier(0.34,1.56,0.64,1); filter:drop-shadow(0 3px 4px rgba(2,2,3,0.45));">
+          <span class="pinRipple" style="position:absolute; left:50%; bottom:1px; width:8px; height:8px; margin:0 0 -4px -4px; border-radius:50%; border:1px solid rgba(237,207,103,0.75); opacity:0;"></span>
+          <svg class="pinMarker" width="22" height="29" sc-camel-view-box="0 0 22 29" fill="none" style="display:block;">
+            <path d="M11 0C5 0 0 4.9 0 11c0 7.5 11 18 11 18s11-10.5 11-18C22 4.9 17 0 11 0Z" fill="#EDCF67"></path>
+            <circle cx="11" cy="11" r="3.6" fill="#020203"></circle>
+          </svg>
+        </div>
+      </sc-for>
+    </div>
+    <div id="heroCopy" style="position:relative; z-index:3; width:100%; max-width:1280px; margin:0 auto; padding:0 48px;">
+      <div style="max-width:720px;">
+        <p id="heroKicker" data-load="" data-load-delay="300" style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.30em; text-transform:uppercase; color:#EDCF67; margin-bottom:28px; opacity:0; transform:translateY(20px); filter:blur(5px); transition:opacity 820ms cubic-bezier(0.16,1,0.3,1), transform 820ms cubic-bezier(0.16,1,0.3,1), filter 820ms cubic-bezier(0.16,1,0.3,1);">National Reach · Local Knowledge</p>
+        <h1 id="heroTitle" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(38px, 5.45vw, 82px); line-height:1.04; letter-spacing:-0.006em; color:#fff; margin-bottom:32px;">
+          <sc-for list="{{ heroWords }}" as="w" hint-placeholder-count="4"><span class="hw heroWord" style="display:inline-block; opacity:0; transform:translateY(30px); transition:opacity 880ms cubic-bezier(0.16,1,0.3,1), transform 880ms cubic-bezier(0.16,1,0.3,1), filter 880ms cubic-bezier(0.16,1,0.3,1), clip-path 980ms cubic-bezier(0.16,1,0.3,1);">{{ w }}</span> </sc-for>
+        </h1>
+        <p id="heroBody" data-load="" data-load-delay="2050" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:clamp(16px,1.25vw,19px); line-height:1.68; color:#D9DEE4; max-width:600px; margin-bottom:44px; opacity:0; transform:translateY(18px); filter:blur(5px); transition:opacity 850ms cubic-bezier(0.16,1,0.3,1), transform 850ms cubic-bezier(0.16,1,0.3,1), filter 850ms cubic-bezier(0.16,1,0.3,1);">For 35+ years, SABRE has been the strategic partner behind location-based brands scaling from single stores into household names.</p>
+        <div id="heroActions" data-load="" data-load-delay="2475" data-load-scale="" style="display:flex; gap:16px; flex-wrap:wrap; opacity:0; transform:translateY(14px) scale(0.97); filter:blur(4px); transition:opacity 760ms cubic-bezier(0.16,1,0.3,1), transform 760ms cubic-bezier(0.16,1,0.3,1), filter 760ms cubic-bezier(0.16,1,0.3,1);">
+          <a id="heroPrimary" href="#brands" style="display:inline-flex; align-items:center; gap:10px; background:#EDCF67; color:#020203; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.055em; padding:16px 28px; transition:transform 240ms cubic-bezier(0.4,0,0.2,1), box-shadow 240ms cubic-bezier(0.4,0,0.2,1);">Scale Your Brand <span data-arrow="" style="display:inline-block; transition:transform 240ms cubic-bezier(0.4,0,0.2,1);">→</span></a>
+          <a href="#landlords" style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.5); color:#fff; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.055em; padding:15px 28px; transition:background 240ms, border-color 240ms;" style-hover="{{ btnGhostHover }}">For Landlords</a>
+        </div>
+      </div>
+    </div>
+    <a id="heroScrollCue" href="#trusted" data-load="" data-load-delay="3000" style="position:absolute; z-index:3; bottom:36px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:10px; font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.30em; text-transform:uppercase; color:rgba(255,255,255,0.65); opacity:0; transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.16,1,0.3,1);">
+      Scroll to begin
+      <span style="display:inline-block; animation:chevBounce 1.8s ease-in-out infinite;">
+        <svg width="16" height="16" sc-camel-view-box="0 0 16 16" fill="none" stroke="rgba(255,255,255,0.65)" stroke-width="1.4"><path d="M3 6l5 5 5-5"></path></svg>
+      </span>
+    </a>
+    </div>
+  </header>
+
+  <!-- ============ SECTION 2: TRUSTED BY ============ -->
+  <section id="trusted" style="background:#020203; padding:88px 0; border-top:1px solid rgba(255,255,255,0.06); overflow:hidden; position:relative; z-index:4;">
+    <div style="max-width:1280px; margin:0 auto; padding:0 48px;">
+      <p data-reveal="up" style="text-align:center; font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.30em; text-transform:uppercase; color:#EDCF67; margin-bottom:52px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Trusted by the brands that defined their categories</p>
+    </div>
+    <div style="position:relative; width:100%; mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);">
+      <div style="display:flex; width:max-content; gap:80px; animation:marquee 34s linear infinite; align-items:center;">
+        <sc-for list="{{ marqueeLogos }}" as="logo" hint-placeholder-count="16">
+          <span style="font-family:'Space Mono',monospace; font-size:20px; font-weight:700; letter-spacing:0.055em; color:#D9DEE4; opacity:0.55; white-space:nowrap; flex-shrink:0;">{{ logo }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 3: DUAL VALUE PROP ============ -->
+  <section id="brands" style="position:relative; z-index:5; color:#050506; padding:0; background:#030303; overflow:visible; height:420vh;">
+    <div class="sabre-wwd-pin-stage">
+    <div class="sabre-wwd-upper" style="position:relative; isolation:isolate; background:#e8dece; min-height:300px; padding:92px 48px 72px; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(67,54,38,0.22); box-shadow:inset 0 26px 72px rgba(255,255,255,0.48), inset 0 -34px 70px rgba(126,100,66,0.10); overflow:hidden;">
+      <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-upper.mp4" type="video/mp4"></video>
+      <div class="sabre-panel-scrim"></div>
+      <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.72; background-image:radial-gradient(circle at 18% 18%, rgba(255,250,240,0.78), transparent 28%), radial-gradient(circle at 88% 18%, rgba(237,207,103,0.22), transparent 30%), radial-gradient(circle at 68% 86%, rgba(6,36,42,0.05), transparent 34%), repeating-linear-gradient(0deg, rgba(46,37,26,0.035) 0 1px, transparent 1px 5px), repeating-linear-gradient(90deg, rgba(46,37,26,0.026) 0 1px, transparent 1px 7px); mix-blend-mode:multiply;"></div>
+      <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.38; background-image:linear-gradient(90deg, transparent 0 59%, rgba(44,47,45,0.18) 59% 59.15%, transparent 59.15%), linear-gradient(0deg, transparent 0 44%, rgba(44,47,45,0.14) 44% 44.18%, transparent 44.18%), linear-gradient(135deg, transparent 0 68%, rgba(44,47,45,0.18) 68% 68.16%, transparent 68.16%), radial-gradient(circle at 71% 33%, transparent 0 10px, rgba(34,42,42,0.42) 11px 12px, transparent 13px), radial-gradient(circle at 83% 52%, transparent 0 6px, rgba(34,42,42,0.28) 7px 8px, transparent 9px);"></div>
+      <div class="sabre-panel-content" style="max-width:1280px; margin:0 auto;">
+        <p data-reveal="up" style="font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:0.34em; text-transform:uppercase; color:#0b4050; margin:0 0 24px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">What we do</p>
+        <h2 data-reveal="up" data-delay="100" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(38px,4.6vw,66px); line-height:0.98; letter-spacing:-0.006em; max-width:1080px; margin:0; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1); text-shadow:0 1px 0 rgba(255,255,255,0.26);"><span style="white-space:nowrap;">Two businesses. One</span><br>strategic edge.</h2>
+      </div>
+    </div>
+    <div style="position:relative; display:grid; grid-template-columns:1fr 1fr; width:100%; border-top:1px solid rgba(198,157,91,0.62);" data-stack="1024">
+      <div class="sabre-wwd-brands" data-reveal="up" style="position:relative; isolation:isolate; min-height:620px; background:#14130f; color:#f5f2ea; padding:88px clamp(38px,5vw,96px); opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1); overflow:hidden; box-shadow:inset 0 1px 0 rgba(255,255,255,0.07), inset -36px 0 90px rgba(198,157,91,0.07);">
+        <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-brands.mp4" type="video/mp4"></video>
+        <div class="sabre-panel-scrim"></div>
+        <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.70; background-image:radial-gradient(circle at 12% 0%, rgba(255,255,255,0.08), transparent 24%), radial-gradient(circle at 85% 87%, rgba(198,157,91,0.20), transparent 34%), repeating-linear-gradient(102deg, rgba(255,255,255,0.034) 0 1px, transparent 1px 10px), repeating-linear-gradient(13deg, rgba(255,255,255,0.020) 0 1px, transparent 1px 17px), linear-gradient(135deg, rgba(255,255,255,0.055), transparent 28%);"></div>
+        <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.22; background-image:radial-gradient(circle at 23% 26%, rgba(255,255,255,0.08) 0 1px, transparent 1.6px), radial-gradient(circle at 61% 61%, rgba(255,255,255,0.05) 0 1px, transparent 1.8px); background-size:11px 11px, 17px 17px;"></div>
+        <div class="sabre-panel-content" style="max-width:620px;">
+          <p style="font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:0.27em; text-transform:uppercase; color:#edcf67; margin:0 0 28px;">01 / For brands scaling</p>
+          <h3 style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(28px,2.85vw,38px); line-height:1.06; letter-spacing:-0.004em; margin:0 0 28px; color:#ffffff; text-shadow:0 0 18px rgba(255,255,255,0.08);">Scale nationally,<br>without breaking.</h3>
+          <p style="font-family:Montserrat,Arial,sans-serif; font-size:16px; line-height:1.75; color:rgba(245,242,234,0.78); margin:0 0 30px;">End-to-end scaling for location-based brands. From site selection to operational playbooks — we've guided companies from early expansion to 100+ locations and successful exits.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 34px; display:grid; gap:14px; font-family:Montserrat,Arial,sans-serif; font-size:14px; color:rgba(255,255,255,0.88);">
+            <sc-for each="b in brandBullets">
+              <li style="display:flex; gap:14px; align-items:flex-start;"><span style="color:#edcf67; font-family:'Space Mono',monospace;">—</span>{{ b }}</li>
+            </sc-for>
+          </ul>
+          <a href="#contact" style="display:inline-block; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.055em; color:#ffffff; padding-bottom:5px; border-bottom:1px solid #edcf67; text-decoration:none;">Start scaling &nbsp;→</a>
+        </div>
+      </div>
+      <div id="landlords" class="sabre-wwd-landlords" data-reveal="up" data-delay="120" style="position:relative; isolation:isolate; min-height:620px; background:#d4d6d2; color:#070707; padding:88px clamp(38px,5vw,96px); opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1); overflow:hidden; box-shadow:inset 0 1px 0 rgba(255,255,255,0.62), inset 30px 0 80px rgba(11,64,80,0.035);">
+        <video class="sabre-panel-video" data-scroll-video="" muted playsinline preload="auto" aria-hidden="true" tabindex="-1"><source src="media/what-we-do-landlords.mp4" type="video/mp4"></video>
+        <div class="sabre-panel-scrim"></div>
+        <div style="position:absolute; inset:0; z-index:1; pointer-events:none; opacity:0.62; background-image:radial-gradient(circle at 86% 76%, rgba(237,207,103,0.28), transparent 16%), radial-gradient(circle at 6% 0%, rgba(255,255,255,0.72), transparent 30%), repeating-linear-gradient(0deg, rgba(10,20,22,0.034) 0 1px, transparent 1px 6px), repeating-linear-gradient(90deg, rgba(10,20,22,0.025) 0 1px, transparent 1px 8px), linear-gradient(135deg, rgba(255,255,255,0.26), transparent 34%); mix-blend-mode:multiply;"></div>
+        <div class="sabre-panel-content" style="max-width:620px;">
+          <p style="font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:0.24em; text-transform:uppercase; color:#0b4050; margin:0 0 28px;">02 / For landlords & investors</p>
+          <h3 style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(28px,2.85vw,38px); line-height:1.06; letter-spacing:-0.004em; margin:0 0 28px; color:#050506;">Turn spaces into destinations.</h3>
+          <p style="font-family:Montserrat,Arial,sans-serif; font-size:16px; line-height:1.75; color:rgba(5,5,6,0.66); margin:0 0 30px;">Traditional CRE brokerage across NY Metro and Florida. Strategic tenant curation, asset repositioning, and placemaking that maximize asset value.</p>
+          <ul style="list-style:none; padding:0; margin:0 0 34px; display:grid; gap:14px; font-family:Montserrat,Arial,sans-serif; font-size:14px; color:rgba(5,5,6,0.82);">
+            <sc-for each="b in landlordBullets">
+              <li style="display:flex; gap:14px; align-items:flex-start;"><span style="color:#0b4050; font-family:'Space Mono',monospace;">—</span>{{ b }}</li>
+            </sc-for>
+          </ul>
+          <a href="#contact" style="display:inline-block; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.055em; color:#050506; padding-bottom:5px; border-bottom:1px solid #0b4050; text-decoration:none;">Explore brokerage &nbsp;→</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 4: THE APPROACH ============ -->
+  <section class="sabre-material-dark sabre-method-section" style="background:#030404; padding:118px 0 132px; min-height:100vh; border-top:1px solid rgba(255,255,255,0.055);">
+    <div class="sabre-method-ruler sabre-method-ruler-left"></div>
+    <div class="sabre-method-ruler sabre-method-ruler-right"></div>
+    <div class="sabre-method-reticle sabre-method-reticle-a"></div>
+    <div class="sabre-method-reticle sabre-method-reticle-b"></div>
+    <div class="sabre-method-reticle sabre-method-reticle-c"></div>
+    <div class="sabre-method-inner" style="max-width:1280px; margin:0 auto; padding:0 48px;">
+      <div class="sabre-method-copy" style="max-width:820px; margin:0 0 58px 128px;">
+        <p data-reveal="up" style="font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:0.31em; text-transform:uppercase; color:#EDCF67; margin:0 0 22px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">The SABRE Method</p>
+        <h2 data-reveal="up" data-delay="100" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(34px,4.2vw,58px); line-height:1.02; letter-spacing:-0.006em; max-width:760px; margin:0 0 22px; color:#f7f7f3; text-shadow:0 0 24px rgba(100,199,205,0.18), 0 0 1px rgba(255,255,255,0.8); opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Analytical rigor meets institutional insight.</h2>
+        <p data-reveal="up" data-delay="200" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:18px; line-height:1.72; color:rgba(229,234,238,0.82); max-width:580px; margin:0; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Our approach integrates sophisticated technology with decades of industry knowledge.</p>
+      </div>
+      <div class="sabre-method-card-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px; max-width:960px; margin:0 auto; position:relative;" data-stack="880">
+        <div class="sabre-method-rail"></div>
+        <sc-for list="{{ methodCards }}" as="card" hint-placeholder-count="3">
+          <div class="sabre-method-card" data-reveal="up" data-delay="{{ card.delay }}" style="padding:42px 34px 44px; min-height:258px; opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1);">
+            <span class="sabre-method-node"></span>
+            <p class="sabre-method-num" style="font-family:'Space Mono',monospace; font-weight:700; font-size:48px; color:#EDCF67; opacity:0.92; margin:0 0 24px; line-height:1; letter-spacing:-0.05em;">{{ card.num }}</p>
+            <h3 style="font-family:'Space Mono',monospace; font-weight:700; font-size:19px; line-height:1.22; margin:0 0 16px; color:#fff; text-shadow:0 0 16px rgba(255,255,255,0.08);">{{ card.title }}</h3>
+            <p style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:14px; line-height:1.72; color:rgba(228,232,235,0.82); margin:0;">{{ card.body }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5: THE PROGRESSION ============ -->
+  <section class="sabre-material-limestone sabre-journey-section" style="background:#eee4d3; color:#020203; padding:118px 0 126px; border-top:1px solid rgba(46,37,26,0.18);">
+    <div class="sabre-journey-orb sabre-journey-orb-a"></div>
+    <div class="sabre-journey-orb sabre-journey-orb-b"></div>
+    <div class="sabre-journey-shell" style="max-width:1360px; margin:0 auto; padding:0 48px; display:grid; grid-template-columns:1.18fr 1fr; gap:76px; align-items:center;" data-stack="960">
+      <!-- Visual: progression graphic -->
+      <div data-reveal="up" style="opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1);">
+        <div class="sabre-curve-panel" style="position:relative; background:#080806; padding:56px 48px 58px; overflow:hidden; min-height:430px;">
+          <div class="sabre-curve-corner sabre-curve-corner-a"></div>
+          <div class="sabre-curve-corner sabre-curve-corner-b"></div>
+          <p style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.28em; text-transform:uppercase; color:rgba(255,255,255,0.54); margin:0 0 40px; position:relative; z-index:2;">The scaling curve</p>
+          <div class="sabre-curve-line" aria-hidden="true">
+            <span class="sabre-curve-seg sabre-curve-seg-1"></span>
+            <span class="sabre-curve-seg sabre-curve-seg-2"></span>
+            <span class="sabre-curve-seg sabre-curve-seg-3"></span>
+            <span class="sabre-curve-seg sabre-curve-seg-4"></span>
+            <span class="sabre-curve-seg sabre-curve-seg-5"></span>
+          </div>
+          <div class="sabre-curve-bars" style="display:flex; align-items:flex-end; gap:22px; height:232px; position:relative; z-index:2;">
+            <sc-for list="{{ curveBars }}" as="bar" hint-placeholder-count="5">
+              <div class="sabre-curve-bar-wrap" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; justify-content:flex-end; height:100%; position:relative;">
+                <span style="font-family:'Space Mono',monospace; font-weight:700; font-size:14px; color:#EDCF67; text-shadow:0 0 12px rgba(237,207,103,0.38);">{{ bar.label }}</span>
+                <div data-bar="" data-h="{{ bar.h }}" class="sabre-curve-bar" style="--bar-h:{{ bar.h }}%; width:100%; height:0; background:linear-gradient(180deg,#F1D76F 0%,#C7A857 22%,#113D3F 78%,#062629 100%); transition:height 900ms cubic-bezier(0.4,0,0.2,1);"></div>
+              </div>
+            </sc-for>
+          </div>
+          <div class="sabre-curve-baseline"></div>
+        </div>
+      </div>
+      <!-- Copy + stats -->
+      <div class="sabre-journey-copy">
+        <p data-reveal="up" style="font-family:'Space Mono',monospace; font-weight:700; font-size:11px; letter-spacing:0.30em; text-transform:uppercase; color:#0b4050; margin:0 0 22px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">The Journey</p>
+        <h2 data-reveal="up" data-delay="100" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(32px,3.8vw,58px); line-height:1.02; letter-spacing:-0.006em; margin:0 0 22px; max-width:650px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1); text-shadow:0 1px 0 rgba(255,255,255,0.34);">From single storefront to national footprint.</h2>
+        <p data-reveal="up" data-delay="200" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:16px; line-height:1.72; color:#383838; margin:0 0 40px; max-width:610px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Every household name started with one location. SABRE has spent 35+ years perfecting the playbook that turns emerging concepts into category-defining brands.</p>
+        <div class="sabre-stats-draft" style="display:grid; grid-template-columns:1fr 1fr; gap:0; margin:0 0 38px;">
+          <sc-for list="{{ stats }}" as="s" hint-placeholder-count="4">
+            <div class="sabre-stat-cell" style="padding:28px 26px 30px; min-height:126px;">
+              <p data-count="{{ s.target }}" data-suffix="{{ s.suffix }}" data-static="{{ s.static }}" style="font-family:'Space Mono',monospace; font-weight:700; font-size:32px; color:#020203; line-height:1; margin:0 0 10px;">{{ s.initial }}</p>
+              <p style="font-family:'Montserrat',sans-serif; font-weight:400; font-size:13px; color:#383838; line-height:1.4; margin:0;">{{ s.label }}</p>
+              <span class="sabre-stat-dot"></span>
+            </div>
+          </sc-for>
+        </div>
+        <a href="#contact" class="sabre-journey-link" style="display:inline-block; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.035em; color:#020203; padding-bottom:5px; border-bottom:1px solid #022F3B;">See our case studies &nbsp;→</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 6: VERTICALS ============ -->
+  <section class="sabre-material-dark sabre-verticals-section" style="position:relative; background:#020203; color:#fff; padding:120px 0; overflow:hidden;">
+    <video id="verticalsLoopVideo" data-loop-video="" muted="" loop="" playsinline="" preload="auto" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:0;">
+      <source src="53f9d838-427e-4227-bc46-1ea064fafc1a" type="video/mp4">
+    </video>
+    <div style="position:absolute; inset:0; z-index:1; background:linear-gradient(135deg, rgba(2,2,3,0.9) 0%, rgba(2,2,3,0.72) 55%, rgba(2,2,3,0.82) 100%);"></div>
+    <div style="position:relative; z-index:2; max-width:1280px; margin:0 auto; padding:0 48px;">
+      <h2 data-reveal="up" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(28px,3.25vw,44px); line-height:1.1; letter-spacing:-0.004em; margin-bottom:18px; color:#fff; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Deep expertise where it matters.</h2>
+      <p data-reveal="up" data-delay="100" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:18px; line-height:1.6; color:#D9DEE4; max-width:520px; margin-bottom:56px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">We focus exclusively on the verticals defining modern retail.</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;" data-stack="760">
+        <sc-for list="{{ verticals }}" as="v" hint-placeholder-count="4">
+          <div class="sabre-vertical-card" data-reveal="up" data-delay="{{ v.delay }}" style="background:rgba(20,21,23,0.55); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:40px 40px 44px; border-left:3px solid {{ v.accent }}; border-top:1px solid rgba(255,255,255,0.08); display:flex; flex-direction:column; gap:14px; opacity:1; transform:translateY(30px); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1);" style-hover="{{ cardLift }}">
+            <h3 style="font-family:'Space Mono',monospace; font-weight:700; font-size:20px; line-height:1.18; color:#fff;">{{ v.title }}</h3>
+            <p style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:15px; line-height:1.6; color:#D9DEE4;">{{ v.desc }}</p>
+            <p style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#fff; opacity:0.5; margin-top:auto; padding-top:8px;">{{ v.clients }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 7: CULTURE ============ -->
+  <section id="culture" class="sabre-material-dark sabre-culture-section" style="background:#020203; padding:140px 0;">
+    <div class="sabre-culture-media" aria-hidden="true">
+      <video id="cultureDnaVideo" class="sabre-culture-video" data-loop-video muted loop autoplay playsinline preload="auto">
+        <source src="media/culture/sabre-dna-background.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="sabre-culture-edge sabre-culture-edge--top" aria-hidden="true"></div>
+    <div style="max-width:820px; margin:0 auto; padding:0 48px; text-align:center;">
+      <p data-reveal="up" style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.30em; text-transform:uppercase; color:#EDCF67; margin-bottom:36px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Our DNA</p>
+      <blockquote data-reveal="scale" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(24px,3.05vw,40px); line-height:1.24; letter-spacing:-0.004em; color:#fff; margin-bottom:32px; opacity:1; transform:scale(0.96); transition:opacity 700ms cubic-bezier(0.4,0,0.2,1), transform 700ms cubic-bezier(0.4,0,0.2,1);">"We live all in. For us, this isn't work — it's a lifestyle."</blockquote>
+      <p data-reveal="up" data-delay="150" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:14px; color:#D9DEE4; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1); margin-bottom:36px;">— The SABRE team</p>
+      <p data-reveal="up" data-delay="250" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:18px; line-height:1.7; color:#D9DEE4; max-width:640px; margin:0 auto; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Living our passion fuels growth, creates excitement, and inspires excellence. We pride ourselves on being transparent, ethical, and authentic. Our reputation is our most valuable asset.</p>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 8: FINAL CTA ============ -->
+  <section id="contact" class="sabre-cta sabre-cta-section" style="background:#022F3B; padding:130px 0;">
+    <div class="sabre-cta__media" aria-hidden="true">
+      <video id="sabreCtaIdle" class="sabre-cta__video sabre-cta__video--idle" data-cta-video muted playsinline loop preload="auto" poster="media/cta/sabre-cta-poster.png">
+        <source src="media/cta/sabre-cta-idle.mp4" type="video/mp4">
+      </video>
+      <video id="sabreCtaBook" class="sabre-cta__video sabre-cta__video--activation" data-cta-video muted playsinline preload="auto" poster="media/cta/sabre-cta-poster.png">
+        <source src="media/cta/sabre-cta-book.mp4" type="video/mp4">
+      </video>
+      <video id="sabreCtaExplore" class="sabre-cta__video sabre-cta__video--activation" data-cta-video muted playsinline preload="auto" poster="media/cta/sabre-cta-poster.png">
+        <source src="media/cta/sabre-cta-explore.mp4" type="video/mp4">
+      </video>
+      <div class="sabre-cta__veil"></div>
+    </div>
+    <div class="sabre-cta__content" style="max-width:900px; margin:0 auto; padding:0 48px; text-align:center;">
+      <h2 data-reveal="up" style="font-family:'Space Mono',monospace; font-weight:700; font-size:clamp(30px,3.85vw,50px); line-height:1.08; letter-spacing:-0.004em; color:#fff; margin-bottom:24px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Ready to scale strategically?</h2>
+      <p data-reveal="up" data-delay="120" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:18px; line-height:1.6; color:#BFDDD5; max-width:560px; margin:0 auto 44px; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">Whether you're expanding a brand or repositioning an asset — let's build something enduring.</p>
+      <div data-reveal="up" data-delay="240" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap; opacity:1; transform:translateY(20px); transition:opacity 600ms cubic-bezier(0.4,0,0.2,1), transform 600ms cubic-bezier(0.4,0,0.2,1);">
+        <a id="sabreCtaBookTrigger" href="#contact" class="sabre-button-primary" style="background:#EDCF67; color:#020203; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.055em; padding:16px 30px; transition:transform 240ms cubic-bezier(0.4,0,0.2,1), box-shadow 240ms;" style-hover="{{ btnPrimaryHover }}">Book a strategy session</a>
+        <a id="sabreCtaExploreTrigger" href="#brands" class="sabre-button-secondary" style="border:1px solid rgba(255,255,255,0.55); color:#fff; font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.055em; padding:15px 30px; transition:background 240ms, border-color 240ms;" style-hover="{{ btnGhostHover }}">Explore our services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 9: FOOTER ============ -->
+  <footer class="sabre-footer" style="background:#020203; padding:80px 0 40px; border-top:1px solid rgba(255,255,255,0.08);">
+    <div style="max-width:1280px; margin:0 auto; padding:0 48px;">
+      <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:48px; margin-bottom:64px;" data-stack="760">
+        <div>
+          <img class="sabre-footer-logo" src="media/sabre-white-logo-transparent.png" alt="SABRE">
+          <p style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.45);">National Reach · Local Knowledge</p>
+        </div>
+        <sc-for list="{{ footerCols }}" as="col" hint-placeholder-count="2">
+          <div>
+            <p style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#EDCF67; margin-bottom:20px;">{{ col.head }}</p>
+            <ul style="list-style:none; display:flex; flex-direction:column; gap:12px;">
+              <sc-for list="{{ col.items }}" as="it" hint-placeholder-count="4">
+                <li><a href="#" style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:14px; color:#D9DEE4; opacity:0.8; transition:opacity 200ms;" style-hover="{{ footerLinkHover }}">{{ it }}</a></li>
+              </sc-for>
+            </ul>
+          </div>
+        </sc-for>
+        <div>
+          <p style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:#EDCF67; margin-bottom:20px;">Contact</p>
+          <p style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:14px; line-height:1.6; color:#D9DEE4; opacity:0.8; margin-bottom:20px;">500 Old Country Road<br>Garden City, NY 11530</p>
+          <div style="display:flex; gap:16px;">
+            <sc-for list="{{ socials }}" as="soc" hint-placeholder-count="3">
+              <a href="#" aria-label="{{ soc }}" style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.04em; color:#D9DEE4; opacity:0.7; transition:opacity 200ms;" style-hover="{{ footerLinkHover }}">{{ soc }}</a>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.08);">
+        <p style="font-family:'Montserrat',sans-serif; font-weight:300; font-size:12px; color:rgba(255,255,255,0.4);">© 2026 SABRE Real Estate Group, LLC</p>
+        <div style="display:flex; gap:24px; font-family:'Montserrat',sans-serif; font-weight:300; font-size:12px; color:rgba(255,255,255,0.4);">
+          <a href="#" style="transition:color 200ms;" style-hover="{{ footerLinkHover }}">Legal</a>
+          <a href="#" style="transition:color 200ms;" style-hover="{{ footerLinkHover }}">Accessibility</a>
+          <a href="#" style="transition:color 200ms;" style-hover="{{ footerLinkHover }}">sabre.life</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  renderVals() {
+    const brands = ['Chipotle', 'Starbucks', '[solidcore]', 'Orangetheory', 'European Wax Center', 'Massage Envy', 'F45 Training', 'Sweat440'];
+    return {
+      navRef: (el) => { this._nav = el; },
+      navLinkHover: { opacity: 1 },
+      btnPrimaryHover: { transform: 'scale(1.02)', boxShadow: '0 12px 34px rgba(237,207,103,0.35)' },
+      btnGhostHover: { background: 'rgba(255,255,255,0.1)', borderColor: '#fff' },
+      cardLift: { transform: 'translateY(-8px)', boxShadow: '0 18px 40px rgba(2,2,3,0.15)' },
+      footerLinkHover: { opacity: 1, color: '#fff' },
+
+      marqueeLogos: [...brands, ...brands],
+      heroWords: ['How', 'household', 'names', 'got', 'big.'],
+      // Land & expand: 1 -> 2 -> 4 -> ... ; placed to clear the heading / sub-copy / CTA column
+      pins: [
+        { top: '34%', left: '84%', delay: 900 },  // NYC (origin)   — wave 1: 1
+        { top: '40%', left: '66%', delay: 1700 }, // Chicago         — wave 2: 2
+        { top: '55%', left: '70%', delay: 2500 }, // Atlanta         — wave 3: 4
+        { top: '29%', left: '79%', delay: 2650 }, // Boston
+        { top: '69%', left: '77%', delay: 3500 }, // Miami           — wave 4: expand
+        { top: '47%', left: '76%', delay: 3650 }, // Carolinas
+        { top: '52%', left: '63%', delay: 3800 }, // Nashville
+        { top: '63%', left: '66%', delay: 3950 }, // FL panhandle
+        { top: '64%', left: '52%', delay: 4100 }, // Houston
+        { top: '30%', left: '34%', delay: 4250 }, // Denver (top-left)
+        { top: '22%', left: '42%', delay: 4400 }, // Minneapolis (upper midwest)
+        { top: '14%', left: '28%', delay: 4550 }, // Montana / N. Rockies (top-left)
+        { top: '21%', left: '18%', delay: 4700 }, // Seattle (top-left)
+        { top: '16%', left: '10%', delay: 4850 }, // Portland (top-left)
+      ],
+      pinLines: (() => {
+        const p = { nyc:[84,34], chicago:[66,40], atlanta:[70,55], boston:[79,29], miami:[77,69], carolina:[76,47], nashville:[63,52], florida:[66,63], houston:[52,64], denver:[34,30], minneapolis:[42,22], montana:[28,14], seattle:[18,21], portland:[10,16] };
+        // draw outward from established hubs as new pins land (kept to the open map)
+        const pairs = [
+          ['nyc','chicago',1900], ['nyc','boston',2000], ['chicago','atlanta',2700],
+          ['atlanta','miami',2850], ['chicago','nashville',3700], ['nashville','houston',3850],
+          ['chicago','minneapolis',4000], ['minneapolis','denver',4300], ['denver','seattle',4600],
+        ];
+        return pairs.map((pr) => ({ x1: p[pr[0]][0], y1: p[pr[0]][1], x2: p[pr[1]][0], y2: p[pr[1]][1], delay: pr[2] }));
+      })(),
+
+      brandBullets: [
+        'Site selection & market analytics',
+        'Lease negotiation & transaction management',
+        'Design, construction & build-out',
+        'Operational scaling playbooks',
+      ],
+      landlordBullets: [
+        'Tenant curation & strategic mix',
+        'Asset repositioning',
+        'Investment sales',
+        'Placemaking initiatives',
+      ],
+
+      methodCards: [
+        { num: '01', delay: 0, title: 'Data-driven curation', body: 'Proprietary transaction management platform + advanced site analytics identify optimal opportunities.' },
+        { num: '02', delay: 120, title: 'Institutional knowledge', body: '35+ years of experience across fitness, hospitality, health & beauty, and medical retail.' },
+        { num: '03', delay: 240, title: 'Repeatable systems', body: 'Standardized operating systems that turn one great location into a scalable, national brand.' },
+      ],
+
+      curveBars: [
+        { label: '1', h: 18 },
+        { label: '3', h: 34 },
+        { label: '10', h: 56 },
+        { label: '40', h: 78 },
+        { label: '100+', h: 100 },
+      ],
+
+      stats: [
+        { initial: '0+', target: 100, suffix: '+', static: '', label: 'Locations scaled per brand' },
+        { initial: '0+', target: 35, suffix: '+', static: '', label: 'Years of expertise' },
+        { initial: '0', target: 4, suffix: '', static: '', label: 'Specialized verticals' },
+        { initial: 'Nationwide', target: 0, suffix: '', static: 'Nationwide', label: 'Reach' },
+      ],
+
+      verticals: [
+        { delay: 0, accent: '#022F3B', title: 'Fitness & Wellness', desc: 'The category we\u2019ve defined for 35+ years.', clients: '[solidcore] · Orangetheory · F45 · Sweat440' },
+        { delay: 120, accent: '#EDCF67', title: 'Restaurant & Hospitality', desc: 'Growing category leaders into household names.', clients: 'Chipotle · Starbucks' },
+        { delay: 120, accent: '#BFDDD5', title: 'Health & Beauty', desc: 'Scaling wellness brands with disciplined expansion.', clients: 'European Wax Center · Massage Envy' },
+        { delay: 240, accent: '#383838', title: 'Medical & Cannabis', desc: 'Emerging category expertise for tomorrow\u2019s leaders.', clients: 'Specialized advisory' },
+      ],
+
+      footerCols: [
+        { head: 'Services', items: ['For Brands', 'For Landlords', 'About', 'Team', 'Careers'] },
+        { head: 'Verticals', items: ['Fitness', 'Restaurant', 'Health & Beauty', 'Medical'] },
+      ],
+      socials: ['LinkedIn', 'Twitter', 'Instagram'],
+    };
+  }
+
+  componentDidMount() {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileExperience = window.matchMedia('(max-width: 767px), (hover: none), (pointer: coarse)').matches;
+    const root = this._root || document;
+
+    // ---- Cinematic page loader: planet -> descent -> flagship. Time-based only, NOT scroll-linked. ----
+    // The source clip settles at 4.300s. This repo keeps the browser-safe H.264 scrub as a split clip that starts at source 3.500s.
+    const HERO_SOURCE_HANDOFF_TIME = 4.3;
+    const HERO_SPLIT_SOURCE_START = 3.5;
+    const HERO_SCROLL_START = Math.max(0, HERO_SOURCE_HANDOFF_TIME - HERO_SPLIT_SOURCE_START);
+    const HERO_REVEAL_EASE_MS = 980;
+    const overlay = document.createElement('div');
+    Object.assign(overlay.style, {
+      position: 'fixed', inset: '0', zIndex: '9999', background: '#020203',
+      transition: 'opacity 980ms cubic-bezier(0.16,1,0.3,1)', pointerEvents: 'none', opacity: '1',
+    });
+    const loaderVid = document.createElement('video');
+    loaderVid.src = 'media/sabre-loader-1080.mp4';
+    loaderVid.muted = true; loaderVid.defaultMuted = true; loaderVid.playsInline = true;
+    loaderVid.setAttribute('muted', ''); loaderVid.setAttribute('playsinline', ''); loaderVid.preload = 'auto';
+    Object.assign(loaderVid.style, {
+      position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover', background: '#020203',
+    });
+    const settleVid = document.createElement('video');
+    settleVid.src = 'hero-scroll.mp4';
+    settleVid.muted = true; settleVid.defaultMuted = true; settleVid.playsInline = true;
+    settleVid.setAttribute('muted', ''); settleVid.setAttribute('playsinline', ''); settleVid.preload = 'auto';
+    Object.assign(settleVid.style, {
+      position: 'absolute', inset: '0', width: '100%', height: '100%', objectFit: 'cover', background: '#020203', opacity: '0',
+    });
+    overlay.appendChild(loaderVid);
+    overlay.appendChild(settleVid);
+    document.body.appendChild(overlay);
+
+    // Hold the intro as a deliberate moment: pin to top + lock scroll while it plays, then release.
+    try { window.scrollTo(0, 0); } catch (e) {}
+    const prevOverflow = document.documentElement.style.overflow;
+    let loaderDone = false, revealed = false;
+    const easeHeroToHandoff = (video, done) => {
+      if (!video || prefersReduced) { done(); return; }
+      const start = Math.max(0, Math.min(HERO_SCROLL_START, video.currentTime || 0));
+      const end = HERO_SCROLL_START;
+      const startAt = performance.now();
+      overlay.style.opacity = '0';
+      const step = (now) => {
+        const t = Math.min(1, (now - startAt) / HERO_REVEAL_EASE_MS);
+        const eased = 1 - Math.pow(1 - t, 3);
+        const next = start + (end - start) * eased;
+        try {
+          video.pause();
+          video.currentTime = next;
+        } catch (e) {}
+        heroScrubCurrent = next;
+        heroScrubTarget = next;
+        if (t < 1) requestAnimationFrame(step);
+        else {
+          try { video.currentTime = end; } catch (e) {}
+          heroScrubCurrent = end;
+          heroScrubTarget = end;
+          done();
+        }
+      };
+      requestAnimationFrame(step);
+    };
+    const commitReveal = () => {
+      if (revealed) return; revealed = true;
+      document.documentElement.style.overflow = prevOverflow;
+      if (this._nav) this._nav.style.opacity = '1';
+      overlay.style.opacity = '0';
+      setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 900);
+    };
+    const revealSite = () => {
+      if (loaderDone) return; loaderDone = true;
+      const heroVid = document.getElementById('heroVideo');
+      if (heroVid) {
+        try {
+          heroVid.pause();
+          heroVid.currentTime = HERO_SCROLL_START;
+          heroScrubCurrent = HERO_SCROLL_START;
+          heroScrubTarget = HERO_SCROLL_START;
+        } catch (e) {}
+        heroVid.style.opacity = '1';
+      }
+      if (heroVid && heroVid.readyState < 2) {
+        let waited = 0;
+        const poll = () => {
+          waited += 100;
+          if (heroVid.readyState >= 2 || waited >= 4000) commitReveal();
+          else setTimeout(poll, 100);
+        };
+        heroVid.addEventListener('loadeddata', commitReveal, { once: true });
+        setTimeout(poll, 100);
+      } else {
+        commitReveal();
+      }
+    };
+    const playSettleClip = () => {
+      if (loaderDone) return;
+      try { loaderVid.pause(); } catch (e) {}
+      loaderVid.style.opacity = '0';
+      settleVid.style.opacity = '1';
+      try { settleVid.currentTime = 0; } catch (e) {}
+      const finish = () => revealSite();
+      const onTime = () => {
+        if (settleVid.currentTime >= HERO_SCROLL_START - 0.015) {
+          settleVid.removeEventListener('timeupdate', onTime);
+          try { settleVid.pause(); settleVid.currentTime = HERO_SCROLL_START; } catch (e) {}
+          finish();
+        }
+      };
+      settleVid.addEventListener('timeupdate', onTime);
+      settleVid.addEventListener('ended', finish, { once: true });
+      const p = settleVid.play();
+      if (p && p.catch) p.catch(finish);
+      setTimeout(finish, Math.max(900, HERO_SCROLL_START * 1000 + 260));
+    };
+
+    if (prefersReduced || isMobileExperience) {
+      // No motion preference: skip the descent, reveal immediately (after mount, past TDZ).
+      requestAnimationFrame(() => requestAnimationFrame(revealSite));
+    } else {
+      document.documentElement.style.overflow = 'hidden';
+      const startLoader = () => { const p = loaderVid.play(); if (p && p.catch) p.catch(() => {}); };
+      loaderVid.addEventListener('loadeddata', startLoader, { once: true });
+      loaderVid.addEventListener('canplay', startLoader, { once: true });
+      startLoader();
+      loaderVid.addEventListener('ended', playSettleClip, { once: true }); // continue to the settled 4.3s frame before release
+      loaderVid.addEventListener('error', revealSite, { once: true });     // never trap the page
+      setTimeout(playSettleClip, 7000);                                    // safety cap on the loader stage
+    }
+
+    // ---- Hero load choreography ----
+    const runLoad = () => {
+      const heroVid = document.getElementById('heroVideo');
+      if (heroVid) heroVid.style.opacity = '1';
+      document.querySelectorAll('[data-load]').forEach((el) => {
+        if (el.id === 'heroScrollCue') return;
+        const d = parseInt(el.getAttribute('data-load-delay') || '0', 10);
+        setTimeout(() => {
+          if (prefersReduced) {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.filter = 'none';
+          }
+        }, prefersReduced ? 0 : d);
+      });
+      if (!prefersReduced) setTimeout(onHeroScroll, 60);
+    };
+    setTimeout(runLoad, 120);
+
+    // ---- Smooth pinned hero: real video playback + scroll-driven copy ----
+    const hero = document.getElementById('hero');
+    const heroStage = document.getElementById('heroStage');
+    const heroVideo = document.getElementById('heroVideo');
+    const heroShade = document.getElementById('heroShade');
+    const heroVignette = document.getElementById('heroVignette');
+    const heroCopy = document.getElementById('heroCopy');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroWordsEls = Array.from(document.querySelectorAll('#heroTitle .hw'));
+    const heroKicker = document.getElementById('heroKicker');
+    const heroBody = document.getElementById('heroBody');
+    const heroActions = document.getElementById('heroActions');
+    const heroScrollCue = document.getElementById('heroScrollCue');
+    const trustedSection = document.getElementById('trusted');
+    const whatWeDoSection = document.getElementById('brands');
+    let heroRaf = null;
+    let heroScrubRaf = null;
+    let heroScrubTarget = HERO_SCROLL_START;
+    let heroScrubCurrent = HERO_SCROLL_START;
+    const clamp01 = (v) => Math.min(1, Math.max(0, v));
+    const smoothstep = (v) => v * v * (3 - 2 * v);
+    const range = (v, a, b) => smoothstep(clamp01((v - a) / Math.max(0.001, b - a)));
+    const getVideoMaxTime = (video) => {
+      if (!video || !Number.isFinite(video.duration) || video.duration <= 0) return 0;
+      return Math.max(0, video.duration - 0.055);
+    };
+    const scrubVideoToward = (video, target, ease) => {
+      const maxTime = getVideoMaxTime(video);
+      if (!maxTime || video.readyState < 1) return false;
+      try { video.pause(); } catch (err) {}
+      const goal = Math.min(maxTime, Math.max(0, target));
+      const current = Number.isFinite(heroScrubCurrent) ? heroScrubCurrent : (Number.isFinite(video.currentTime) ? video.currentTime : 0);
+      const delta = goal - current;
+      try {
+        if (Math.abs(delta) < 0.011) {
+          heroScrubCurrent = goal;
+          if (Math.abs(video.currentTime - goal) > 0.004) video.currentTime = goal;
+          return false;
+        }
+        heroScrubCurrent = current + delta * ease;
+        video.currentTime = heroScrubCurrent;
+      } catch (err) {
+        return false;
+      }
+      return true;
+    };
+    const setWord = (el, amount, lift) => {
+      if (!el) return;
+      el.style.opacity = String(amount);
+      el.style.clipPath = 'inset(0 ' + ((1 - amount) * 100).toFixed(1) + '% 0 0)';
+      el.style.filter = 'blur(' + ((1 - amount) * 2.2).toFixed(2) + 'px)';
+      el.style.transform = 'translate3d(0,' + ((1 - amount) * 18 - lift).toFixed(1) + 'px,0)';
+    };
+    const tickHeroScrub = () => {
+      heroScrubRaf = null;
+      if (!heroVideo || prefersReduced || window.innerWidth < 768) return;
+      const needsMore = scrubVideoToward(heroVideo, heroScrubTarget, 0.145);
+      if (needsMore) heroScrubRaf = requestAnimationFrame(tickHeroScrub);
+    };
+    const queueHeroScrub = () => {
+      if (heroScrubRaf == null) heroScrubRaf = requestAnimationFrame(tickHeroScrub);
+    };
+    const syncHero = () => {
+      heroRaf = null;
+      if (!hero || !heroVideo || prefersReduced || window.innerWidth < 768) return;
+      const rect = hero.getBoundingClientRect();
+      const viewport = Math.max(1, window.innerHeight || rect.height);
+      const span = Math.max(1, rect.height - viewport);
+      const progress = clamp01(-rect.top / span);
+      const eased = smoothstep(progress);
+
+      if (heroStage) {
+        if (rect.top <= 0 && rect.bottom > viewport) {
+          Object.assign(heroStage.style, { position: 'fixed', top: '0', left: '0', right: '0', width: '100%', zIndex: '1' });
+        } else if (rect.top > 0) {
+          Object.assign(heroStage.style, { position: 'absolute', top: '0', bottom: 'auto', left: '0', right: 'auto', width: '100%', zIndex: '1' });
+        } else {
+          Object.assign(heroStage.style, { position: 'absolute', top: 'auto', bottom: '0', left: '0', right: 'auto', width: '100%', zIndex: '1' });
+        }
+      }
+
+      const heroMaxTime = getVideoMaxTime(heroVideo);
+      if (heroMaxTime) {
+        const scrubRange = Math.max(0, heroMaxTime - HERO_SCROLL_START);
+        heroScrubTarget = progress <= 0.004 ? HERO_SCROLL_START : HERO_SCROLL_START + progress * scrubRange;
+        queueHeroScrub();
+      }
+
+      heroVideo.style.filter = 'none';
+      if (heroShade) heroShade.style.opacity = '0';
+      if (heroVignette) heroVignette.style.opacity = '0';
+
+      const leave = 0;
+      const readability = range(progress, 0.46, 0.68);
+      const kickerIn = range(progress, 0.11, 0.18);
+      const howIn = range(progress, 0.16, 0.24);
+      const householdIn = range(progress, 0.22, 0.34);
+      const namesIn = range(progress, 0.31, 0.44);
+      const gotIn = range(progress, 0.42, 0.57);
+      const bigIn = range(progress, 0.52, 0.68);
+      const bodyIn = range(progress, 0.64, 0.78);
+      const actionsIn = range(progress, 0.72, 0.88);
+      const lift = leave * 44;
+      if (heroCopy) {
+        heroCopy.style.setProperty('--hero-readability', (readability * 0.92).toFixed(3));
+        heroCopy.style.setProperty('--hero-copy-x', (-readability * 12).toFixed(1) + 'px');
+        heroCopy.style.setProperty('--hero-copy-y', (-readability * 8).toFixed(1) + 'px');
+      }
+
+      if (heroKicker) {
+        heroKicker.style.opacity = String(kickerIn * (1 - leave));
+        heroKicker.style.transform = 'translate3d(0,' + ((1 - kickerIn) * 14 - leave * 16).toFixed(1) + 'px,0)';
+        heroKicker.style.filter = 'blur(' + ((1 - kickerIn) * 1.8).toFixed(2) + 'px)';
+        heroKicker.style.textShadow = '0 2px ' + (8 + readability * 14).toFixed(1) + 'px rgba(0,0,0,' + (0.24 + readability * 0.42).toFixed(3) + ')';
+      }
+      setWord(heroWordsEls[0], howIn * (1 - leave), lift * 0.38);
+      setWord(heroWordsEls[1], householdIn * (1 - leave), lift * 0.44);
+      setWord(heroWordsEls[2], namesIn * (1 - leave), lift * 0.50);
+      setWord(heroWordsEls[3], gotIn * (1 - leave), lift * 0.58);
+      setWord(heroWordsEls[4], bigIn * (1 - leave), lift * 0.64);
+      heroWordsEls.forEach((word) => {
+        if (!word) return;
+        word.style.textShadow = '0 3px ' + (12 + readability * 22).toFixed(1) + 'px rgba(0,0,0,' + (0.26 + readability * 0.48).toFixed(3) + '), 0 0 ' + (bigIn * 12).toFixed(1) + 'px rgba(237,207,103,0.12)';
+      });
+      if (heroTitle) heroTitle.style.transform = 'translate3d(0,' + (-leave * 24).toFixed(1) + 'px,0)';
+      if (heroBody) {
+        heroBody.style.opacity = String(bodyIn * (1 - leave));
+        heroBody.style.transform = 'translate3d(0,' + ((1 - bodyIn) * 16 - leave * 32).toFixed(1) + 'px,0)';
+        heroBody.style.filter = 'blur(' + ((1 - bodyIn) * 1.6).toFixed(2) + 'px)';
+        heroBody.style.textShadow = '0 2px ' + (10 + readability * 18).toFixed(1) + 'px rgba(0,0,0,' + (0.34 + readability * 0.46).toFixed(3) + ')';
+      }
+      if (heroActions) {
+        heroActions.style.opacity = String(actionsIn * (1 - leave));
+        heroActions.style.transform = 'translate3d(0,' + ((1 - actionsIn) * 16 - leave * 42).toFixed(1) + 'px,0)';
+        heroActions.style.filter = 'blur(' + ((1 - actionsIn) * 1.4).toFixed(2) + 'px)';
+      }
+      if (heroScrollCue) {
+        heroScrollCue.style.opacity = String(Math.max(0, 1 - range(progress, 0.08, 0.18)));
+      }
+      if (trustedSection) {
+        const arrival = range(progress, 0.84, 1);
+        trustedSection.style.transform = 'translate3d(0,' + (-arrival * 18).toFixed(1) + 'px,0)';
+        trustedSection.style.boxShadow = '0 ' + (-arrival * 28).toFixed(1) + 'px 70px rgba(2,2,3,' + (0.1 + arrival * 0.24).toFixed(3) + ')';
+      }
+      if (whatWeDoSection) whatWeDoSection.style.transform = 'none';
+    };
+    const onHeroScroll = () => {
+      if (heroRaf == null) heroRaf = requestAnimationFrame(syncHero);
+    };
+    if (heroVideo) {
+      heroVideo.muted = true;
+      heroVideo.pause();
+      heroVideo.addEventListener('loadedmetadata', () => {
+        heroVideo.currentTime = HERO_SCROLL_START;
+        heroScrubCurrent = HERO_SCROLL_START;
+        heroScrubTarget = HERO_SCROLL_START;
+        onHeroScroll();
+      }, { once: true });
+      heroVideo.addEventListener('canplay', () => { heroVideo.pause(); onHeroScroll(); }, { once: true });
+    }
+    window.addEventListener('scroll', onHeroScroll, { passive: true });
+    window.addEventListener('resize', onHeroScroll);
+    setTimeout(onHeroScroll, prefersReduced ? 0 : 400);
+
+
+    // ---- What We Do: canvas frame scrub with damped inertia ----
+    const methodSection = Array.from(document.querySelectorAll('section')).find((section) =>
+      section !== whatWeDoSection && section.textContent && section.textContent.includes('Analytical rigor meets institutional insight')
+    );
+    const wwdStage = whatWeDoSection ? whatWeDoSection.querySelector('.sabre-wwd-pin-stage') : null;
+    const wwdVideos = Array.from(document.querySelectorAll('#brands .sabre-panel-video'));
+    const wwdUpper = whatWeDoSection ? whatWeDoSection.querySelector('.sabre-wwd-upper') : null;
+    const wwdBrands = whatWeDoSection ? whatWeDoSection.querySelector('.sabre-wwd-brands') : null;
+    const wwdLandlords = whatWeDoSection ? whatWeDoSection.querySelector('.sabre-wwd-landlords') : null;
+    const getWwdCopyItems = (panel) => panel ? Array.from(panel.querySelectorAll('.sabre-panel-content > *')) : [];
+    const wwdCopyGroups = [
+      { items: getWwdCopyItems(wwdUpper), start: 0.02, end: 0.28 },
+      { items: getWwdCopyItems(wwdBrands), start: 0.24, end: 0.68 },
+      { items: getWwdCopyItems(wwdLandlords), start: 0.48, end: 0.94 },
+    ];
+    const wwdSequences = new Map();
+    let wwdRaf = null;
+    let wwdProgress = 0;
+    let wwdTargetProgress = 0;
+    let wwdVelocity = 0;
+    let wwdLastScrollY = window.scrollY || window.pageYOffset || 0;
+    let wwdLooping = false;
+
+    const waitForVideoEvent = (video, eventName, timeout = 1400) => new Promise((resolve) => {
+      let done = false;
+      const finish = () => {
+        if (done) return;
+        done = true;
+        video.removeEventListener(eventName, finish);
+        resolve();
+      };
+      video.addEventListener(eventName, finish, { once: true });
+      setTimeout(finish, timeout);
+    });
+
+    const drawCoverFrame = (ctx, image, width, height) => {
+      const iw = image.videoWidth || image.width;
+      const ih = image.videoHeight || image.height;
+      if (!iw || !ih || !width || !height) return;
+      const scale = Math.max(width / iw, height / ih);
+      const sw = width / scale;
+      const sh = height / scale;
+      const sx = (iw - sw) / 2;
+      const sy = (ih - sh) / 2;
+      ctx.clearRect(0, 0, width, height);
+      ctx.drawImage(image, sx, sy, sw, sh, 0, 0, width, height);
+    };
+
+    const buildCanvasSequence = async (video) => {
+      const panel = video.closest('.sabre-wwd-upper, .sabre-wwd-brands, .sabre-wwd-landlords');
+      if (!panel || prefersReduced || isMobileExperience) return;
+      if (video.readyState < 1) await waitForVideoEvent(video, 'loadedmetadata', 2200);
+      const duration = getVideoMaxTime(video);
+      if (!duration || !video.videoWidth || !video.videoHeight) return;
+
+      const canvas = document.createElement('canvas');
+      canvas.className = 'sabre-scrub-canvas';
+      video.insertAdjacentElement('afterend', canvas);
+      const ctx = canvas.getContext('2d', { alpha: false });
+      const frames = [];
+      const targetWidth = Math.min(720, Math.max(480, Math.round(video.videoWidth / 2)));
+      const targetHeight = Math.max(270, Math.round(targetWidth * video.videoHeight / video.videoWidth));
+      const capture = document.createElement('canvas');
+      capture.width = targetWidth;
+      capture.height = targetHeight;
+      const captureCtx = capture.getContext('2d', { alpha: false });
+      const frameCount = window.innerWidth >= 1180 ? 64 : 48;
+
+      video.muted = true;
+      video.pause();
+      video.removeAttribute('autoplay');
+      video.removeAttribute('loop');
+      for (let i = 0; i < frameCount; i++) {
+        const time = (i / Math.max(1, frameCount - 1)) * duration;
+        try { video.currentTime = Math.min(duration, time); } catch (err) {}
+        await waitForVideoEvent(video, 'seeked', 900);
+        drawCoverFrame(captureCtx, video, targetWidth, targetHeight);
+        if ('createImageBitmap' in window) {
+          try { frames.push(await createImageBitmap(capture)); }
+          catch (err) { frames.push(capture.toDataURL('image/jpeg', 0.78)); }
+        } else {
+          frames.push(capture.toDataURL('image/jpeg', 0.78));
+        }
+        if (i === 0) {
+          renderCanvasFrame({ canvas, ctx, frames, lastFrame: -1 }, 0, true);
+          panel.classList.add('sabre-scrub-ready');
+        }
+        if (i % 6 === 0) await new Promise((resolve) => requestAnimationFrame(resolve));
+      }
+      wwdSequences.set(video, { canvas, ctx, frames, lastFrame: -1 });
+      video.pause();
+      panel.classList.add('sabre-scrub-ready');
+      renderWwdFrames(wwdProgress, true);
+      if (wwdLooping) setWwdLooping(true);
+    };
+
+    const sizeCanvas = (sequence) => {
+      const rect = sequence.canvas.getBoundingClientRect();
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const width = Math.max(1, Math.round(rect.width * dpr));
+      const height = Math.max(1, Math.round(rect.height * dpr));
+      if (sequence.canvas.width !== width || sequence.canvas.height !== height) {
+        sequence.canvas.width = width;
+        sequence.canvas.height = height;
+        sequence.lastFrame = -1;
+      }
+      return { width, height };
+    };
+
+    const renderCanvasFrame = (sequence, index, force) => {
+      if (!sequence || !sequence.frames.length) return;
+      const frameIndex = Math.max(0, Math.min(sequence.frames.length - 1, index));
+      if (!force && frameIndex === sequence.lastFrame) return;
+      sequence.lastFrame = frameIndex;
+      const { width, height } = sizeCanvas(sequence);
+      const frame = sequence.frames[frameIndex];
+      if (typeof frame === 'string') {
+        const img = new Image();
+        img.onload = () => drawCoverFrame(sequence.ctx, img, width, height);
+        img.src = frame;
+      } else {
+        drawCoverFrame(sequence.ctx, frame, width, height);
+      }
+    };
+
+    const renderWwdFrames = (p, force) => {
+      wwdVideos.forEach((video, index) => {
+        const sequence = wwdSequences.get(video);
+        if (!sequence || !sequence.frames.length) return;
+        const offset = index === 0 ? 0 : index === 1 ? 0.018 : 0.034;
+        const scaledProgress = clamp01(p * 1.018 + offset);
+        const frameIndex = Math.round(scaledProgress * (sequence.frames.length - 1));
+        renderCanvasFrame(sequence, frameIndex, force);
+      });
+    };
+
+    const getWwdScrollProgress = () => {
+      if (!whatWeDoSection) return 0;
+      const viewport = Math.max(1, window.innerHeight || 1);
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      const rect = whatWeDoSection.getBoundingClientRect();
+      const sectionTop = scrollY + rect.top;
+      const holdSpan = Math.max(viewport * 1.35, whatWeDoSection.offsetHeight - viewport);
+      return clamp01((scrollY - sectionTop) / Math.max(1, holdSpan));
+    };
+    const updateWwdPin = () => {
+      if (!whatWeDoSection || !wwdStage) return;
+      const viewport = Math.max(1, window.innerHeight || 1);
+      const rect = whatWeDoSection.getBoundingClientRect();
+      const navOffset = window.innerWidth < 768 ? 0 : Math.min(82, Math.max(64, this._nav ? this._nav.offsetHeight : 70));
+      if (rect.top <= 0 && rect.bottom > viewport) {
+        Object.assign(wwdStage.style, { position: 'fixed', top: navOffset + 'px', bottom: 'auto', left: '0', right: '0', width: '100%', height: 'calc(100vh - ' + navOffset + 'px)', zIndex: '5' });
+      } else if (rect.top > 0) {
+        Object.assign(wwdStage.style, { position: 'absolute', top: '0', bottom: 'auto', left: '0', right: '0', width: '100%', height: '', zIndex: '1' });
+      } else {
+        Object.assign(wwdStage.style, { position: 'absolute', top: 'auto', bottom: '0', left: '0', right: '0', width: '100%', height: '', zIndex: '1' });
+      }
+    };
+
+    const setWwdLooping = (enabled) => {
+      if (!whatWeDoSection || prefersReduced || window.innerWidth < 768) return;
+      if (wwdLooping === enabled && whatWeDoSection.classList.contains('sabre-wwd-looping') === enabled) return;
+      wwdLooping = enabled;
+      whatWeDoSection.classList.toggle('sabre-wwd-looping', enabled);
+      wwdVideos.forEach((video) => {
+        video.loop = enabled;
+        video.muted = true;
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        if (enabled) {
+          const p = video.play();
+          if (p && p.catch) p.catch(() => {});
+        } else {
+          video.pause();
+        }
+      });
+    };
+
+    const setPanelMotion = (panel, sectionProgress, enterA, enterB, drift) => {
+      if (!panel) return;
+      const content = panel.querySelector('.sabre-panel-content');
+      const layer = panel.querySelector('.sabre-scrub-canvas') || panel.querySelector('.sabre-panel-video');
+      const p = range(sectionProgress, enterA, enterB);
+      const lift = -p * drift;
+      if (content) {
+        content.style.transform = 'translate3d(0,' + lift.toFixed(1) + 'px,0)';
+        content.style.opacity = '1';
+      }
+      if (layer) {
+        const scale = 1.012 + p * 0.044;
+        const y = -p * 8;
+        layer.style.transform = 'translate3d(0,' + y.toFixed(1) + 'px,0) scale(' + scale.toFixed(4) + ')';
+      }
+    };
+    const prepareWwdCopy = () => {
+      wwdCopyGroups.forEach((group) => {
+        group.items.forEach((item) => {
+          item.classList.add('sabre-wwd-copy-step');
+          item.style.opacity = prefersReduced ? '1' : '0';
+          item.style.transform = prefersReduced ? 'none' : 'translate3d(0,18px,0)';
+          item.style.filter = prefersReduced ? 'none' : 'blur(5px)';
+          item.style.clipPath = prefersReduced ? 'none' : 'inset(0 0 18% 0)';
+        });
+      });
+    };
+    const revealWwdCopy = (items, amount) => {
+      if (!items.length) return;
+      const count = Math.max(1, items.length);
+      items.forEach((item, index) => {
+        const start = index * 0.085;
+        const q = range(amount, start, Math.min(1, start + 0.30 + 0.08 / count));
+        item.style.opacity = String(q);
+        item.style.transform = 'translate3d(0,' + ((1 - q) * 18).toFixed(1) + 'px,0)';
+        item.style.filter = 'blur(' + ((1 - q) * 4.5).toFixed(2) + 'px)';
+        item.style.clipPath = 'inset(0 0 ' + ((1 - q) * 18).toFixed(1) + '% 0)';
+      });
+    };
+
+    const applyWwdVisuals = (p) => {
+      if (!whatWeDoSection || prefersReduced || window.innerWidth < 768) return;
+      updateWwdPin();
+      whatWeDoSection.style.transform = 'none';
+      setPanelMotion(wwdUpper, p, 0.00, 0.30, 18);
+      setPanelMotion(wwdBrands, p, 0.14, 0.68, 34);
+      setPanelMotion(wwdLandlords, p, 0.34, 0.94, 34);
+      wwdCopyGroups.forEach((group) => revealWwdCopy(group.items, range(p, group.start, group.end)));
+      setWwdLooping(true);
+    };
+
+    const tickWwd = () => {
+      wwdRaf = null;
+      if (!whatWeDoSection || !methodSection || prefersReduced || window.innerWidth < 768) return;
+      const attraction = (wwdTargetProgress - wwdProgress) * 0.12;
+      wwdVelocity += attraction;
+      wwdVelocity *= 0.76;
+      wwdProgress = clamp01(wwdProgress + wwdVelocity);
+      const resting = Math.abs(wwdTargetProgress - wwdProgress) < 0.002 && Math.abs(wwdVelocity) < 0.0007;
+      if (resting) wwdProgress = wwdTargetProgress;
+      applyWwdVisuals(wwdProgress);
+      if (!resting) wwdRaf = requestAnimationFrame(tickWwd);
+    };
+
+    const queueWwd = () => {
+      if (wwdRaf == null) wwdRaf = requestAnimationFrame(tickWwd);
+    };
+
+    const syncWwdScrub = () => {
+      if (!whatWeDoSection || !methodSection || prefersReduced || window.innerWidth < 768) return;
+      updateWwdPin();
+      const scrollY = window.scrollY || window.pageYOffset || 0;
+      const viewport = Math.max(1, window.innerHeight || 1);
+      const spanHint = Math.max(viewport * 1.55, whatWeDoSection.offsetHeight - viewport);
+      const delta = scrollY - wwdLastScrollY;
+      wwdLastScrollY = scrollY;
+      wwdTargetProgress = getWwdScrollProgress();
+      if (Math.abs(delta) > 0) {
+        wwdVelocity += Math.max(-0.042, Math.min(0.042, delta / spanHint)) * 0.28;
+      }
+      queueWwd();
+    };
+
+    prepareWwdCopy();
+    if (isMobileExperience) {
+      wwdCopyGroups.forEach((group) => revealWwdCopy(group.items, 1));
+      wwdVideos.forEach((video) => {
+        video.muted = true;
+        video.removeAttribute('autoplay');
+        video.setAttribute('preload', 'metadata');
+        try { video.pause(); } catch (err) {}
+      });
+    } else {
+      wwdVideos.forEach((video) => {
+        video.muted = true;
+        video.loop = true;
+        video.setAttribute('loop', '');
+        video.setAttribute('autoplay', '');
+        video.setAttribute('preload', 'auto');
+        const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+        play();
+        video.addEventListener('canplay', play, { once: true });
+      });
+    }
+    window.addEventListener('scroll', syncWwdScrub, { passive: true });
+    window.addEventListener('resize', () => { updateWwdPin(); wwdTargetProgress = getWwdScrollProgress(); wwdSequences.forEach((sequence) => { sequence.lastFrame = -1; }); renderWwdFrames(wwdProgress, true); queueWwd(); });
+    setTimeout(() => { wwdTargetProgress = getWwdScrollProgress(); wwdProgress = wwdTargetProgress; applyWwdVisuals(wwdProgress); renderWwdFrames(wwdProgress, true); }, prefersReduced ? 0 : 300);
+
+    // ---- Location pins ----
+    const isMobile = window.innerWidth < 768;
+    const pinMult = isMobile ? 0.7 : 1;
+    document.querySelectorAll('[data-pin]').forEach((pin) => {
+      const ripple = pin.querySelector('.pinRipple');
+      const startPulse = () => {
+        if (prefersReduced || !ripple) return;
+        ripple.style.animation = 'pinRipple 3s ease-out infinite';
+        ripple.style.animationDelay = (Math.random() * 1.2).toFixed(2) + 's';
+      };
+      if (prefersReduced) {
+        pin.style.opacity = '1';
+        pin.style.transform = 'translate(-50%,-100%) scale(1)';
+      } else {
+        const d = parseInt(pin.getAttribute('data-delay') || '0', 10) * pinMult;
+        setTimeout(() => {
+          pin.style.opacity = '1';
+          pin.style.transform = 'translate(-50%,-100%) scale(1)';
+          setTimeout(startPulse, 500);
+        }, d);
+      }
+    });
+
+    // ---- Connecting lines ----
+    if (!isMobile) {
+      document.querySelectorAll('[data-line]').forEach((ln) => {
+        const len = ln.getTotalLength ? ln.getTotalLength() : 100;
+        ln.style.strokeDasharray = len;
+        ln.style.strokeDashoffset = len;
+        if (prefersReduced) {
+          ln.style.strokeDashoffset = '0';
+          ln.style.opacity = '1';
+        } else {
+          const d = parseInt(ln.getAttribute('data-delay') || '0', 10);
+          setTimeout(() => {
+            ln.style.transition = 'stroke-dashoffset 800ms cubic-bezier(0.4,0,0.2,1), opacity 300ms';
+            ln.style.opacity = '1';
+            ln.style.strokeDashoffset = '0';
+          }, d);
+        }
+      });
+    }
+
+    // ---- Ensure non-scrubbed videos play immediately ----
+    document.querySelectorAll('video:not([data-scroll-video]):not([data-loop-video]):not([data-cta-video]):not(#heroVideo):not(.sabre-panel-video)').forEach((vid) => {
+      vid.muted = true;
+      if (typeof vid.play !== 'function') return;
+      const tryPlay = () => { const p = vid.play(); if (p && p.catch) p.catch(() => {}); };
+      tryPlay();
+      vid.addEventListener('canplay', tryPlay, { once: true });
+      document.addEventListener('click', tryPlay, { once: true });
+    });
+
+    // ---- Scroll-triggered videos: play only while in view ----
+    const svObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = e.target;
+        v.muted = true;
+        if (e.isIntersecting) { const p = v.play(); if (p && p.catch) p.catch(() => {}); }
+        else { v.pause(); }
+      });
+    }, { threshold: 0.25 });
+    document.querySelectorAll('[data-scroll-video]:not([data-cta-video]):not(.sabre-panel-video)').forEach((v) => svObs.observe(v));
+
+    // ---- Ambient looping videos: independent background loops while visible ----
+    const loopVideos = Array.from(document.querySelectorAll('[data-loop-video]'));
+    let loopVideoKeepAlive = null;
+    const playLoopVideo = (video) => {
+      if (!video || prefersReduced) return;
+      video.muted = true;
+      video.loop = true;
+      video.setAttribute('loop', '');
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('autoplay', '');
+      if (typeof video.play !== 'function') return;
+      const play = video.play();
+      if (play && play.catch) play.catch(() => {});
+    };
+    const refreshLoopVideos = () => {
+      loopVideos.forEach((video) => {
+        const rect = video.getBoundingClientRect();
+        const visible = rect.bottom > 0 && rect.top < (window.innerHeight || 1);
+        if (visible) playLoopVideo(video);
+        else video.pause();
+      });
+    };
+    const loopVideoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting) playLoopVideo(video);
+        else video.pause();
+      });
+    }, { threshold: 0.01 });
+    loopVideos.forEach((video) => {
+      video.addEventListener('ended', () => {
+        try { video.currentTime = 0; } catch (err) {}
+        playLoopVideo(video);
+      });
+      video.addEventListener('pause', () => {
+        const rect = video.getBoundingClientRect();
+        if (rect.bottom > 0 && rect.top < (window.innerHeight || 1)) window.setTimeout(() => playLoopVideo(video), 80);
+      });
+      loopVideoObserver.observe(video);
+    });
+    loopVideoKeepAlive = window.setInterval(refreshLoopVideos, 1600);
+
+    // ---- CTA animation controller ----
+    const ctaSection = document.getElementById('contact');
+    const idleVideo = document.getElementById('sabreCtaIdle');
+    const bookVideo = document.getElementById('sabreCtaBook');
+    const exploreVideo = document.getElementById('sabreCtaExplore');
+    const bookTrigger = document.getElementById('sabreCtaBookTrigger');
+    const exploreTrigger = document.getElementById('sabreCtaExploreTrigger');
+    const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    let activeCtaVideo = null;
+    let ctaIsVisible = false;
+    let resetTimer = null;
+    let ctaKeepAlive = null;
+    const safePlay = (video) => {
+      if (!video) return;
+      video.muted = true;
+      const promise = video.play();
+      if (promise && typeof promise.catch === 'function') promise.catch(() => {});
+    };
+    if (idleVideo) {
+      idleVideo.loop = true;
+      idleVideo.setAttribute('loop', '');
+    }
+    const resetActivationVideo = (video) => {
+      if (!video) return;
+      video.pause();
+      try { video.currentTime = 0; } catch (error) {}
+    };
+    const deactivateCtaVideo = (video = activeCtaVideo) => {
+      if (!video) return;
+      video.classList.remove('is-active');
+      if (activeCtaVideo === video) activeCtaVideo = null;
+      window.clearTimeout(resetTimer);
+      resetTimer = window.setTimeout(() => {
+        if (!video.classList.contains('is-active')) resetActivationVideo(video);
+      }, 220);
+    };
+    const activateCtaVideo = (video) => {
+      refreshCtaVisibility();
+      if (!video || prefersReduced || !ctaIsVisible) return;
+      window.clearTimeout(resetTimer);
+      [bookVideo, exploreVideo].forEach((candidate) => {
+        if (candidate && candidate !== video) {
+          candidate.classList.remove('is-active');
+          resetActivationVideo(candidate);
+        }
+      });
+      activeCtaVideo = video;
+      resetActivationVideo(video);
+      video.classList.add('is-active');
+      requestAnimationFrame(() => safePlay(video));
+    };
+    const handleBookEnter = () => activateCtaVideo(bookVideo);
+    const handleBookLeave = () => deactivateCtaVideo(bookVideo);
+    const handleBookFocus = () => activateCtaVideo(bookVideo);
+    const handleExploreEnter = () => activateCtaVideo(exploreVideo);
+    const handleExploreLeave = () => deactivateCtaVideo(exploreVideo);
+    const handleExploreFocus = () => activateCtaVideo(exploreVideo);
+    const pointInside = (el, x, y) => {
+      if (!el) return false;
+      const rect = el.getBoundingClientRect();
+      return x >= rect.left && x <= rect.right && y >= rect.top && y <= rect.bottom;
+    };
+    const handleCtaPointerMove = (event) => {
+      if (!hasFinePointer) return;
+      if (!ctaIsVisible && !isCtaInView()) return;
+      if (pointInside(bookTrigger, event.clientX, event.clientY)) {
+        activateCtaVideo(bookVideo);
+      } else if (pointInside(exploreTrigger, event.clientX, event.clientY)) {
+        activateCtaVideo(exploreVideo);
+      } else if (activeCtaVideo) {
+        deactivateCtaVideo(activeCtaVideo);
+      }
+    };
+    bookTrigger?.addEventListener('pointerenter', handleBookEnter);
+    bookTrigger?.addEventListener('pointerleave', handleBookLeave);
+    bookTrigger?.addEventListener('mouseenter', handleBookEnter);
+    bookTrigger?.addEventListener('mouseleave', handleBookLeave);
+    bookTrigger?.addEventListener('mouseover', handleBookEnter);
+    bookTrigger?.addEventListener('mouseout', handleBookLeave);
+    bookTrigger?.addEventListener('focus', handleBookFocus);
+    bookTrigger?.addEventListener('blur', handleBookLeave);
+    exploreTrigger?.addEventListener('pointerenter', handleExploreEnter);
+    exploreTrigger?.addEventListener('pointerleave', handleExploreLeave);
+    exploreTrigger?.addEventListener('mouseenter', handleExploreEnter);
+    exploreTrigger?.addEventListener('mouseleave', handleExploreLeave);
+    exploreTrigger?.addEventListener('mouseover', handleExploreEnter);
+    exploreTrigger?.addEventListener('mouseout', handleExploreLeave);
+    exploreTrigger?.addEventListener('focus', handleExploreFocus);
+    exploreTrigger?.addEventListener('blur', handleExploreLeave);
+    bookVideo?.addEventListener('ended', () => { bookVideo.pause(); });
+    exploreVideo?.addEventListener('ended', () => { exploreVideo.pause(); });
+    const isCtaInView = () => {
+      if (!ctaSection) return false;
+      const rect = ctaSection.getBoundingClientRect();
+      return rect.bottom > window.innerHeight * 0.10 && rect.top < window.innerHeight * 0.90;
+    };
+    const refreshCtaVisibility = () => {
+      ctaIsVisible = isCtaInView();
+      if (ctaIsVisible && !prefersReduced) {
+        safePlay(idleVideo);
+        return;
+      }
+      idleVideo?.pause();
+      deactivateCtaVideo(bookVideo);
+      deactivateCtaVideo(exploreVideo);
+    };
+    const ctaObserver = new IntersectionObserver(() => {
+      refreshCtaVisibility();
+    }, { threshold: 0.1 });
+    if (ctaSection) ctaObserver.observe(ctaSection);
+    window.addEventListener('scroll', refreshCtaVisibility, { passive: true });
+    window.addEventListener('resize', refreshCtaVisibility);
+    document.addEventListener('pointermove', handleCtaPointerMove, { passive: true });
+    document.addEventListener('mousemove', handleCtaPointerMove, { passive: true });
+    setTimeout(refreshCtaVisibility, 400);
+    ctaKeepAlive = window.setInterval(refreshCtaVisibility, 1200);
+
+    // ---- Custom cursor disabled: native cursor remains more reliable across dense video/glass sections. ----
+    if (false && window.matchMedia('(pointer: fine)').matches && !prefersReduced) {
+      const cur = document.createElement('div');
+      Object.assign(cur.style, {
+        position: 'fixed', top: '0', left: '0', width: '22px', height: '22px', borderRadius: '50%',
+        border: '1.5px solid rgba(255,255,255,0.7)', background: 'transparent',
+        transform: 'translate(-50%,-50%)', pointerEvents: 'none', zIndex: '9999',
+        transition: 'width 200ms cubic-bezier(0.4,0,0.2,1), height 200ms cubic-bezier(0.4,0,0.2,1), background 200ms, border-color 200ms',
+        mixBlendMode: 'difference', willChange: 'transform',
+      });
+      document.body.appendChild(cur);
+      let cx = window.innerWidth / 2, cy = window.innerHeight / 2, tx = cx, ty = cy;
+      window.addEventListener('mousemove', (e) => { tx = e.clientX; ty = e.clientY; });
+      const loop = () => { cx += (tx - cx) * 0.22; cy += (ty - cy) * 0.22; cur.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%,-50%)'; requestAnimationFrame(loop); };
+      loop();
+      const grow = () => { cur.style.width = '46px'; cur.style.height = '46px'; cur.style.background = 'rgba(237,207,103,0.9)'; cur.style.borderColor = 'rgba(237,207,103,0.9)'; cur.style.mixBlendMode = 'normal'; };
+      const shrink = () => { cur.style.width = '22px'; cur.style.height = '22px'; cur.style.background = 'transparent'; cur.style.borderColor = 'rgba(255,255,255,0.7)'; cur.style.mixBlendMode = 'difference'; };
+      const bind = () => document.querySelectorAll('a, button, [data-cursor]').forEach((el) => {
+        if (el._curBound) return; el._curBound = true;
+        el.addEventListener('mouseenter', grow); el.addEventListener('mouseleave', shrink);
+      });
+      bind();
+      document.addEventListener('mouseleave', () => { cur.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { cur.style.opacity = '1'; });
+    }
+
+    // ---- Nav underline hover ----
+    document.querySelectorAll('[data-navlink]').forEach((link) => {
+      const u = document.createElement('span');
+      Object.assign(u.style, {
+        position: 'absolute', left: '0', bottom: '-6px', height: '1px', width: '100%',
+        background: '#EDCF67', transform: 'scaleX(0)', transformOrigin: 'left center',
+        transition: 'transform 260ms cubic-bezier(0.4,0,0.2,1)',
+      });
+      link.appendChild(u);
+      link.addEventListener('mouseenter', () => { link.style.opacity = '1'; u.style.transformOrigin = 'left center'; u.style.transform = 'scaleX(1)'; });
+      link.addEventListener('mouseleave', () => { link.style.opacity = '1'; u.style.transformOrigin = 'right center'; u.style.transform = 'scaleX(0)'; });
+    });
+
+    // ---- Logo glow ----
+    const logo = document.getElementById('navLogo');
+    if (logo) {
+      logo.addEventListener('mouseenter', () => { logo.style.textShadow = '0 0 18px rgba(237,207,103,0.55)'; });
+      logo.addEventListener('mouseleave', () => { logo.style.textShadow = 'none'; });
+    }
+
+    // ---- Primary CTA glow pulse + text/arrow shift ----
+    const primary = document.getElementById('heroPrimary');
+    if (primary) {
+      const arrow = primary.querySelector('[data-arrow]');
+      primary.addEventListener('mouseenter', () => {
+        primary.style.animation = 'glowPulse 1.6s ease-in-out infinite';
+        primary.style.transform = 'translateX(2px)';
+        if (arrow) arrow.style.transform = 'translateX(4px)';
+      });
+      primary.addEventListener('mouseleave', () => {
+        primary.style.animation = 'none';
+        primary.style.transform = 'none';
+        if (arrow) arrow.style.transform = 'none';
+      });
+    }
+
+
+    // Nav background on scroll
+    const onScroll = () => {
+      if (!this._nav) return;
+      if (window.scrollY > 40) {
+        this._nav.style.background = 'rgba(2,2,3,0.92)';
+        this._nav.style.padding = '18px 48px';
+        this._nav.style.borderBottom = '1px solid rgba(255,255,255,0.08)';
+      } else {
+        this._nav.style.background = 'transparent';
+        this._nav.style.padding = '28px 48px';
+        this._nav.style.borderBottom = 'none';
+      }
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Reveal observer
+    const reveal = (el) => {
+      const delay = parseInt(el.getAttribute('data-delay') || '0', 10);
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = el.getAttribute('data-reveal') === 'scale' ? 'scale(1)' : 'none';
+      }, prefersReduced ? 0 : delay);
+    };
+    const revObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { reveal(e.target); revObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('[data-reveal]').forEach((el) => revObs.observe(el));
+
+    // Bars
+    const barObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.style.setProperty('--bar-h', e.target.getAttribute('data-h') + '%');
+          barObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    document.querySelectorAll('[data-bar]').forEach((el) => barObs.observe(el));
+
+    // Counters
+    const runCount = (el) => {
+      const staticVal = el.getAttribute('data-static');
+      if (staticVal) return;
+      const target = parseInt(el.getAttribute('data-count') || '0', 10);
+      const suffix = el.getAttribute('data-suffix') || '';
+      if (prefersReduced) { el.textContent = target + suffix; return; }
+      const dur = 1400; const start = performance.now();
+      const tick = (now) => {
+        const p = Math.min((now - start) / dur, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(target * eased) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    };
+    const countObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { runCount(e.target); countObs.unobserve(e.target); }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-count]').forEach((el) => countObs.observe(el));
+
+    // Responsive stacking for grids marked data-stack
+    const applyStack = () => {
+      document.querySelectorAll('[data-stack]').forEach((el) => {
+        const bp = parseInt(el.getAttribute('data-stack'), 10);
+        if (window.innerWidth < bp) {
+          el.dataset._cols = el.dataset._cols || el.style.gridTemplateColumns;
+          el.style.gridTemplateColumns = '1fr';
+        } else if (el.dataset._cols) {
+          el.style.gridTemplateColumns = el.dataset._cols;
+        }
+      });
+    };
+    window.addEventListener('resize', applyStack);
+    applyStack();
+
+    this._cleanup = () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('scroll', onHeroScroll);
+      window.removeEventListener('resize', onHeroScroll);
+      if (heroRaf != null) cancelAnimationFrame(heroRaf);
+      if (heroScrubRaf != null) cancelAnimationFrame(heroScrubRaf);
+      window.removeEventListener('resize', applyStack);
+      loopVideoObserver.disconnect();
+      window.clearInterval(loopVideoKeepAlive);
+      ctaObserver.disconnect();
+      window.removeEventListener('scroll', refreshCtaVisibility);
+      window.removeEventListener('resize', refreshCtaVisibility);
+      document.removeEventListener('pointermove', handleCtaPointerMove);
+      document.removeEventListener('mousemove', handleCtaPointerMove);
+      window.clearTimeout(resetTimer);
+      window.clearInterval(ctaKeepAlive);
+      bookTrigger?.removeEventListener('pointerenter', handleBookEnter);
+      bookTrigger?.removeEventListener('pointerleave', handleBookLeave);
+      bookTrigger?.removeEventListener('mouseenter', handleBookEnter);
+      bookTrigger?.removeEventListener('mouseleave', handleBookLeave);
+      bookTrigger?.removeEventListener('mouseover', handleBookEnter);
+      bookTrigger?.removeEventListener('mouseout', handleBookLeave);
+      bookTrigger?.removeEventListener('focus', handleBookFocus);
+      bookTrigger?.removeEventListener('blur', handleBookLeave);
+      exploreTrigger?.removeEventListener('pointerenter', handleExploreEnter);
+      exploreTrigger?.removeEventListener('pointerleave', handleExploreLeave);
+      exploreTrigger?.removeEventListener('mouseenter', handleExploreEnter);
+      exploreTrigger?.removeEventListener('mouseleave', handleExploreLeave);
+      exploreTrigger?.removeEventListener('mouseover', handleExploreEnter);
+      exploreTrigger?.removeEventListener('mouseout', handleExploreLeave);
+      exploreTrigger?.removeEventListener('focus', handleExploreFocus);
+      exploreTrigger?.removeEventListener('blur', handleExploreLeave);
+      [idleVideo, bookVideo, exploreVideo].forEach((video) => { if (video) video.pause(); });
+    };
+  }
+
+  componentWillUnmount() { if (this._cleanup) this._cleanup(); }
+}
+</script>
+
+
+</body></html>

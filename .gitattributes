@@ -1,9 +1,6 @@
 # Large binary assets tracked via Git LFS.
-# index.html carries a ~102MB inlined __bundler/manifest (base64 video),
-# which exceeds GitHub's 100MB non-LFS file limit, so it must be LFS too.
 *.mp4      filter=lfs diff=lfs merge=lfs -text
 *.mov      filter=lfs diff=lfs merge=lfs -text
-index.html filter=lfs diff=lfs merge=lfs -text
 
 # Verification artifacts (storyboard + preview GIFs)
 verification/** filter=lfs diff=lfs merge=lfs -text

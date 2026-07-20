@@ -486,6 +486,27 @@
     .sabre-wwd-landlords .sabre-panel-scrim { background:linear-gradient(180deg, rgba(220,225,226,0.94) 0%, rgba(220,225,226,0.80) 58%, rgba(220,225,226,0.28) 100%); }
   }
   @media (max-width:760px) { .sabre-cta__video { object-position:50% 70%; } }
+  @media (max-width:767px), (hover:none), (pointer:coarse) {
+    header#hero { height:auto !important; min-height:100svh !important; }
+    #heroStage { position:relative !important; height:auto !important; min-height:100svh !important; padding:132px 0 76px !important; align-items:flex-end !important; }
+    #heroVideo { opacity:.76 !important; object-position:62% 50% !important; transform:none !important; filter:none !important; }
+    #heroShade { opacity:1 !important; background:linear-gradient(90deg, rgba(2,2,3,.72), rgba(2,2,3,.32) 56%, rgba(2,2,3,.08)) !important; }
+    #heroVignette { opacity:1 !important; background:radial-gradient(ellipse at 58% 44%, transparent 0 44%, rgba(2,2,3,.44) 100%) !important; }
+    #heroCopy { padding:0 24px !important; }
+    #heroCopy::before { left:0; top:50%; width:100%; height:72%; transform:translate3d(0,-50%,0); opacity:.92 !important; background:radial-gradient(ellipse at 30% 48%, rgba(2,2,3,.66) 0%, rgba(2,2,3,.48) 42%, rgba(2,2,3,0) 78%) !important; }
+    #heroTitle { font-size:clamp(34px,11.5vw,50px) !important; line-height:1.05 !important; margin-bottom:24px !important; }
+    #heroBody { font-size:15.5px !important; line-height:1.58 !important; max-width:95% !important; margin-bottom:28px !important; color:rgba(245,247,248,.92) !important; }
+    #heroActions { gap:12px !important; width:100% !important; }
+    #heroActions a { width:100%; justify-content:center; padding:15px 18px !important; }
+    #brands { height:auto !important; min-height:0 !important; }
+    #brands .sabre-panel-content > * { opacity:1 !important; transform:none !important; filter:none !important; clip-path:none !important; }
+    #brands .sabre-scrub-canvas { display:none !important; }
+    #brands .sabre-panel-video { opacity:.62 !important; transform:none !important; }
+    #contact.sabre-cta { min-height:72svh; padding:96px 0 !important; }
+    .sabre-cta__content { padding:0 24px !important; }
+    .sabre-cta__video--activation { display:none !important; }
+    .sabre-cta__video--idle { opacity:.62 !important; }
+  }
   @media (prefers-reduced-motion: reduce) { .sabre-panel-video, .sabre-culture-video { display:none; } .sabre-cta__video { display:none; } .sabre-cta__media { background:linear-gradient(rgba(2,47,59,0.12), rgba(2,47,59,0.12)), url("media/cta/sabre-cta-poster.png") center 70% / cover no-repeat; } .sabre-vertical-card, .sabre-vertical-card::before, .sabre-vertical-card::after, .sabre-method-card, .sabre-method-card::before, .sabre-curve-bar, .sabre-curve-bar::before, .sabre-curve-bar-wrap span, .sabre-curve-seg { animation:none !important; transition-duration:.001ms !important; } }
 </style>
 <nav style="position:fixed; top:0; left:0; right:0; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:28px 48px; opacity:0; transition:background 400ms cubic-bezier(0.4,0,0.2,1), padding 400ms cubic-bezier(0.4,0,0.2,1), opacity 900ms cubic-bezier(0.16,1,0.3,1);" ref="{{ navRef }}">
@@ -884,6 +905,7 @@ class Component extends DCLogic {
 
   componentDidMount() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobileExperience = window.matchMedia('(max-width: 767px), (hover: none), (pointer: coarse)').matches;
     const root = this._root || document;
 
     // ---- Cinematic page loader: planet -> descent -> flagship. Time-based only, NOT scroll-linked. ----
@@ -998,7 +1020,7 @@ class Component extends DCLogic {
       setTimeout(finish, Math.max(900, HERO_SCROLL_START * 1000 + 260));
     };
 
-    if (prefersReduced) {
+    if (prefersReduced || isMobileExperience) {
       // No motion preference: skip the descent, reveal immediately (after mount, past TDZ).
       requestAnimationFrame(() => requestAnimationFrame(revealSite));
     } else {
@@ -1246,7 +1268,7 @@ class Component extends DCLogic {
 
     const buildCanvasSequence = async (video) => {
       const panel = video.closest('.sabre-wwd-upper, .sabre-wwd-brands, .sabre-wwd-landlords');
-      if (!panel || prefersReduced) return;
+      if (!panel || prefersReduced || isMobileExperience) return;
       if (video.readyState < 1) await waitForVideoEvent(video, 'loadedmetadata', 2200);
       const duration = getVideoMaxTime(video);
       if (!duration || !video.videoWidth || !video.videoHeight) return;
@@ -1458,16 +1480,26 @@ class Component extends DCLogic {
     };
 
     prepareWwdCopy();
-    wwdVideos.forEach((video) => {
-      video.muted = true;
-      video.loop = true;
-      video.setAttribute('loop', '');
-      video.setAttribute('autoplay', '');
-      video.setAttribute('preload', 'auto');
-      const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
-      play();
-      video.addEventListener('canplay', play, { once: true });
-    });
+    if (isMobileExperience) {
+      wwdCopyGroups.forEach((group) => revealWwdCopy(group.items, 1));
+      wwdVideos.forEach((video) => {
+        video.muted = true;
+        video.removeAttribute('autoplay');
+        video.setAttribute('preload', 'metadata');
+        try { video.pause(); } catch (err) {}
+      });
+    } else {
+      wwdVideos.forEach((video) => {
+        video.muted = true;
+        video.loop = true;
+        video.setAttribute('loop', '');
+        video.setAttribute('autoplay', '');
+        video.setAttribute('preload', 'auto');
+        const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+        play();
+        video.addEventListener('canplay', play, { once: true });
+      });
+    }
     window.addEventListener('scroll', syncWwdScrub, { passive: true });
     window.addEventListener('resize', () => { updateWwdPin(); wwdTargetProgress = getWwdScrollProgress(); wwdSequences.forEach((sequence) => { sequence.lastFrame = -1; }); renderWwdFrames(wwdProgress, true); queueWwd(); });
     setTimeout(() => { wwdTargetProgress = getWwdScrollProgress(); wwdProgress = wwdTargetProgress; applyWwdVisuals(wwdProgress); renderWwdFrames(wwdProgress, true); }, prefersReduced ? 0 : 300);
