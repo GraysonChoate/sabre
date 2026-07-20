@@ -526,8 +526,8 @@ window.__resources = {
   }
   @media (max-width:760px) { .sabre-cta__video { object-position:50% 70%; } }
   @media (max-width:767px), (hover:none), (pointer:coarse) {
-    header#hero { height:auto !important; min-height:100svh !important; }
-    #heroStage { position:relative !important; height:auto !important; min-height:100svh !important; padding:132px 0 76px !important; align-items:flex-end !important; }
+    header#hero { height:400svh !important; min-height:400svh !important; overflow:visible !important; }
+    #heroStage { position:sticky !important; top:0 !important; height:100svh !important; min-height:100svh !important; padding:132px 0 76px !important; align-items:flex-end !important; }
     #heroVideo { opacity:.76 !important; object-position:62% 50% !important; transform:none !important; filter:none !important; }
     #heroShade { opacity:1 !important; background:linear-gradient(90deg, rgba(2,2,3,.72), rgba(2,2,3,.32) 56%, rgba(2,2,3,.08)) !important; }
     #heroVignette { opacity:1 !important; background:radial-gradient(ellipse at 58% 44%, transparent 0 44%, rgba(2,2,3,.44) 100%) !important; }
@@ -543,8 +543,14 @@ window.__resources = {
     #brands .sabre-panel-video { opacity:.62 !important; transform:none !important; }
     #contact.sabre-cta { min-height:72svh; padding:96px 0 !important; }
     .sabre-cta__content { padding:0 24px !important; }
-    .sabre-cta__video--activation { display:none !important; }
-    .sabre-cta__video--idle { opacity:.62 !important; }
+    .sabre-cta-section, .sabre-cta { background:#020607 !important; }
+    .sabre-cta-section::before { opacity:.12 !important; }
+    .sabre-cta__media { background:#020607 url("media/cta/sabre-cta-poster.png") center 70% / cover no-repeat !important; }
+    .sabre-cta__video--activation { display:block !important; }
+    .sabre-cta__video--idle { opacity:.86 !important; }
+    .sabre-cta__veil { background:linear-gradient(180deg, rgba(2,2,3,.10), rgba(2,2,3,.18) 58%, rgba(2,2,3,.32)) !important; }
+    .sabre-cta__content a { width:min(100%,340px); touch-action:manipulation; }
+    .sabre-cta__content a.is-mobile-pressed { transform:translateY(1px) scale(.985) !important; }
   }
   @media (prefers-reduced-motion: reduce) { .sabre-panel-video, .sabre-culture-video { display:none; } .sabre-cta__video { display:none; } .sabre-cta__media { background:linear-gradient(rgba(2,47,59,0.12), rgba(2,47,59,0.12)), url("media/cta/sabre-cta-poster.png") center 70% / cover no-repeat; } .sabre-vertical-card, .sabre-vertical-card::before, .sabre-vertical-card::after, .sabre-method-card, .sabre-method-card::before, .sabre-curve-bar, .sabre-curve-bar::before, .sabre-curve-bar-wrap span, .sabre-curve-seg { animation:none !important; transition-duration:.001ms !important; } }
 </style>
@@ -1056,16 +1062,10 @@ class Component extends DCLogic {
       if (heroVid) {
         try {
           heroVid.currentTime = HERO_SCROLL_START;
-          if (isMobileExperience && !prefersReduced) {
-            heroVid.muted = true;
-            heroVid.loop = true;
-            heroVid.setAttribute('loop', '');
-            heroVid.setAttribute('autoplay', '');
-            const play = heroVid.play();
-            if (play && play.catch) play.catch(() => {});
-          } else {
-            heroVid.pause();
-          }
+          heroVid.loop = false;
+          heroVid.removeAttribute('loop');
+          heroVid.removeAttribute('autoplay');
+          heroVid.pause();
           heroScrubCurrent = HERO_SCROLL_START;
           heroScrubTarget = HERO_SCROLL_START;
         } catch (e) {}
@@ -1153,6 +1153,7 @@ class Component extends DCLogic {
       if (heroVid) heroVid.style.opacity = '1';
       document.querySelectorAll('[data-load]').forEach((el) => {
         if (el.id === 'heroScrollCue') return;
+        if (isMobileExperience && el.closest('#hero')) return;
         const d = parseInt(el.getAttribute('data-load-delay') || '0', 10);
         setTimeout(() => {
           if (prefersReduced) {
@@ -1228,8 +1229,8 @@ class Component extends DCLogic {
     };
     const tickHeroScrub = () => {
       heroScrubRaf = null;
-      if (!heroVideo || prefersReduced || window.innerWidth < 768) return;
-      const needsMore = scrubVideoToward(heroVideo, heroScrubTarget, 0.145);
+      if (!heroVideo || prefersReduced) return;
+      const needsMore = scrubVideoToward(heroVideo, heroScrubTarget, isMobileExperience ? 0.20 : 0.145);
       if (needsMore) heroScrubRaf = requestAnimationFrame(tickHeroScrub);
     };
     const queueHeroScrub = () => {
@@ -1237,14 +1238,14 @@ class Component extends DCLogic {
     };
     const syncHero = () => {
       heroRaf = null;
-      if (!hero || !heroVideo || prefersReduced || window.innerWidth < 768) return;
+      if (!hero || !heroVideo || prefersReduced) return;
       const rect = hero.getBoundingClientRect();
       const viewport = Math.max(1, window.innerHeight || rect.height);
       const span = Math.max(1, rect.height - viewport);
       const progress = clamp01(-rect.top / span);
       const eased = smoothstep(progress);
 
-      if (heroStage) {
+      if (heroStage && !isMobileExperience) {
         if (rect.top <= 0 && rect.bottom > viewport) {
           Object.assign(heroStage.style, { position: 'fixed', top: '0', left: '0', right: '0', width: '100%', zIndex: '1' });
         } else if (rect.top > 0) {
@@ -1326,30 +1327,19 @@ class Component extends DCLogic {
       heroVideo.muted = true;
       heroVideo.setAttribute('muted', '');
       heroVideo.setAttribute('playsinline', '');
-      if (isMobileExperience && !prefersReduced) {
-        heroVideo.loop = true;
-        heroVideo.setAttribute('loop', '');
-        heroVideo.setAttribute('autoplay', '');
-      } else {
-        heroVideo.pause();
-      }
+      heroVideo.loop = false;
+      heroVideo.removeAttribute('loop');
+      heroVideo.removeAttribute('autoplay');
+      heroVideo.pause();
       heroVideo.addEventListener('loadedmetadata', () => {
         heroVideo.currentTime = HERO_SCROLL_START;
         heroScrubCurrent = HERO_SCROLL_START;
         heroScrubTarget = HERO_SCROLL_START;
-        if (isMobileExperience && !prefersReduced) {
-          const play = heroVideo.play();
-          if (play && play.catch) play.catch(() => {});
-        }
+        heroVideo.pause();
         onHeroScroll();
       }, { once: true });
       heroVideo.addEventListener('canplay', () => {
-        if (isMobileExperience && !prefersReduced) {
-          const play = heroVideo.play();
-          if (play && play.catch) play.catch(() => {});
-        } else {
-          heroVideo.pause();
-        }
+        heroVideo.pause();
         onHeroScroll();
       }, { once: true });
     }
@@ -1783,6 +1773,7 @@ class Component extends DCLogic {
     let ctaIsVisible = false;
     let resetTimer = null;
     let ctaKeepAlive = null;
+    let ctaNavigationTimer = null;
     const safePlay = (video) => {
       if (!video) return;
       video.muted = true;
@@ -1794,6 +1785,15 @@ class Component extends DCLogic {
       }
       const promise = video.play();
       if (promise && typeof promise.catch === 'function') promise.catch(() => {});
+    };
+    const primeCtaMedia = () => {
+      [idleVideo, bookVideo, exploreVideo].forEach((video) => {
+        if (!video || video.dataset.sabreLoaded === 'true') return;
+        video.dataset.sabreLoaded = 'true';
+        video.preload = 'auto';
+        video.setAttribute('preload', 'auto');
+        try { video.load(); } catch (error) {}
+      });
     };
     if (idleVideo) {
       idleVideo.loop = true;
@@ -1850,6 +1850,32 @@ class Component extends DCLogic {
         deactivateCtaVideo(activeCtaVideo);
       }
     };
+    const bindMobileCta = (trigger, video) => {
+      if (!trigger) return;
+      const release = () => trigger.classList.remove('is-mobile-pressed');
+      trigger.addEventListener('pointerdown', () => {
+        if (hasFinePointer) return;
+        trigger.classList.add('is-mobile-pressed');
+        activateCtaVideo(video);
+        if (typeof navigator.vibrate === 'function') navigator.vibrate(10);
+      });
+      ['pointerup', 'pointercancel', 'pointerleave'].forEach((eventName) => {
+        trigger.addEventListener(eventName, release);
+      });
+      trigger.addEventListener('click', (event) => {
+        if (hasFinePointer || prefersReduced) return;
+        event.preventDefault();
+        activateCtaVideo(video);
+        const href = trigger.getAttribute('href');
+        if (!href || href === '#contact') return;
+        window.clearTimeout(ctaNavigationTimer);
+        ctaNavigationTimer = window.setTimeout(() => {
+          window.location.href = href;
+        }, 560);
+      });
+    };
+    bindMobileCta(bookTrigger, bookVideo);
+    bindMobileCta(exploreTrigger, exploreVideo);
     bookTrigger?.addEventListener('pointerenter', handleBookEnter);
     bookTrigger?.addEventListener('pointerleave', handleBookLeave);
     bookTrigger?.addEventListener('mouseenter', handleBookEnter);
@@ -1866,8 +1892,8 @@ class Component extends DCLogic {
     exploreTrigger?.addEventListener('mouseout', handleExploreLeave);
     exploreTrigger?.addEventListener('focus', handleExploreFocus);
     exploreTrigger?.addEventListener('blur', handleExploreLeave);
-    bookVideo?.addEventListener('ended', () => { bookVideo.pause(); });
-    exploreVideo?.addEventListener('ended', () => { exploreVideo.pause(); });
+    bookVideo?.addEventListener('ended', () => deactivateCtaVideo(bookVideo));
+    exploreVideo?.addEventListener('ended', () => deactivateCtaVideo(exploreVideo));
     const isCtaInView = () => {
       if (!ctaSection) return false;
       const rect = ctaSection.getBoundingClientRect();
@@ -1883,9 +1909,10 @@ class Component extends DCLogic {
       deactivateCtaVideo(bookVideo);
       deactivateCtaVideo(exploreVideo);
     };
-    const ctaObserver = new IntersectionObserver(() => {
+    const ctaObserver = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) primeCtaMedia();
       refreshCtaVisibility();
-    }, { threshold: 0.1 });
+    }, { rootMargin: '120% 0px', threshold: 0.01 });
     if (ctaSection) ctaObserver.observe(ctaSection);
     window.addEventListener('scroll', refreshCtaVisibility, { passive: true });
     window.addEventListener('resize', refreshCtaVisibility);
@@ -2052,6 +2079,7 @@ class Component extends DCLogic {
       document.removeEventListener('pointermove', handleCtaPointerMove);
       document.removeEventListener('mousemove', handleCtaPointerMove);
       window.clearTimeout(resetTimer);
+      window.clearTimeout(ctaNavigationTimer);
       window.clearInterval(ctaKeepAlive);
       bookTrigger?.removeEventListener('pointerenter', handleBookEnter);
       bookTrigger?.removeEventListener('pointerleave', handleBookLeave);
